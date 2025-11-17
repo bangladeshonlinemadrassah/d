@@ -4071,7 +4071,10 @@
     // Default page to main website transition
 function goToMainWebsite() {
   defaultPage.style.display = 'none';
-    
+  
+  // Always start main page from top regardless of default page scroll
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  
   if (checkLoginExpiry()) {
     mainPage.style.display = 'block';
     loadInitialData();
