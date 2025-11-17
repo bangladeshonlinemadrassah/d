@@ -7,6 +7,320 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    /* Default Page Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    #default-page {
+      font-family: "Poppins", sans-serif;
+      color: white;
+      background: linear-gradient(135deg, #14002b, #260042, #000000, #32005f, #001f3f);
+      background-size: 500% 500%;
+      animation: gradientShift 18s ease infinite;
+      background-attachment: fixed;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* HEADER */
+    #default-page header {
+      display: block;
+      text-align: center;
+      padding: 7px 10px;
+      background: linear-gradient(90deg, #3a0ca3aa, #7209b7aa, #f72585aa);
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+
+    #default-page header .logo h3 {
+      font-family: "Russo One", sans-serif;
+      font-size: 40px;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #ff00ff, #00eaff, #ffea00, #ff6bcb, #00ff55);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 12px #ffffff55;
+      display: inline-block;
+      margin: 6px 0;
+    }
+    
+    /* TITLE */
+    #default-page h1 {
+      text-align: center;
+      font-size: 38px;
+      margin-top: 20px;
+      font-family: "Russo One", sans-serif;
+      background: linear-gradient(90deg, #ff00ff, #00eaff, #ffea00, #ff6bcb, #00ff55);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 12px #ffffff55;
+    }
+
+    #default-page h2 {
+      text-align: center;
+      margin-top: 5px;
+      font-size: 18px;
+      opacity: 0.85;
+      color: #e5dfff;
+    }
+
+    /* BANNER */
+    #default-page .teacher-banner img {
+      width: 98%;
+      height: 200px;
+      display: block;
+      margin: 25px auto;
+      border-radius: 22px;
+      object-fit: cover;
+      border: 3px solid #00c3ff;
+      box-shadow: 0 8px 30px #00000088;
+    }
+
+    /* MAIN BUTTON */
+    #default-page .main-btn {
+      margin: 25px auto;
+      padding: 18px 45px;
+      display: block;
+      font-size: 22px;
+      font-weight: 700;
+      text-align: center;
+      border-radius: 50px;
+      cursor: pointer;
+      background: linear-gradient(45deg, #ff00c8, #00eaff, #ffea00, #ff0080, #00ff55);
+      background-size: 400% 400%;
+      animation: glowMove 4s linear infinite;
+      color: white;
+      border: none;
+      box-shadow: 0 0 25px #ff00ff88;
+      width: fit-content;
+    }
+
+    @keyframes glowMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* MOTIVATION BOX */
+    #default-page .motivation-box {
+      width: 90%;
+      margin: 20px auto 35px;
+      padding: 18px 20px;
+      background: linear-gradient(135deg, #ffffff10, #00eaff22, #ff00c822);
+      border-radius: 18px;
+      text-align: center;
+      border: 2px solid #00eaff66;
+      box-shadow: 0 0 25px #00eaff44;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #default-page .motivation-box p {
+      font-size: 18px;
+      font-weight: 600;
+      color: #00ffea;
+      animation: fadeText 1s ease;
+    }
+
+    /* COURSES */
+    #default-page .courses {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 90%;
+      margin: auto;
+      gap: 20px;
+    }
+
+    #default-page .course-box {
+      background: linear-gradient(135deg, #ffffff10, #8900f522);
+      padding: 15px;
+      border-radius: 20px;
+      text-align: center;
+      border: 2px solid #ffffff22;
+      box-shadow: 0 0 20px #5500ff55;
+    }
+
+    #default-page .course-img img {
+      width: 100%;
+      height: 140px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 2px solid #00eaff44;
+    }
+
+    #default-page .course-box p {
+      margin-top: 10px;
+      font-size: 17px;
+      color: #ffea00;
+      cursor: pointer;
+    }
+
+    /* TEACHER BOX */
+    #default-page .teacher-box {
+      width: 85%;
+      margin: 40px auto;
+      padding: 35px;
+      background: linear-gradient(135deg, #ffffff10, #ff00c822, #00eaff22);
+      border-radius: 25px;
+      text-align: center;
+      border: 3px solid #ff00ff55;
+      box-shadow: 0 0 35px #ff00ff55;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    #default-page .single-teacher {
+      text-align: center;
+    }
+
+    #default-page .single-teacher img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #00ffe5;
+      box-shadow: 0 0 20px #00ffe588;
+    }
+
+    #default-page .t-name {
+      margin-top: 15px;
+      color: #ffea00;
+      font-size: 22px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #ff00ff, #00eaff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px #ffea0044;
+    }
+
+    #default-page .t-position {
+      margin-top: 8px;
+      font-size: 18px;
+      color: #00ffea;
+    }
+
+    #default-page .t-exp {
+      margin-top: 5px;
+      font-size: 16px;
+      color: #e5dfff;
+    }
+
+    #default-page .t-summary {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #ffffffcc;
+      padding: 0 10px;
+    }
+
+    /* FOOTER */
+    #default-page footer {
+      margin-top: 40px;
+      background: linear-gradient(135deg, #1a0033ee, #320059ee, #000522ee);
+      padding: 35px 20px;
+      text-align: center;
+      color: #e2d9ff;
+      border-top: 3px solid #ff00ff88;
+      box-shadow: 0 -5px 35px #000000aa;
+      border-radius: 20px 20px 0 0;
+    }
+
+    #default-page footer h3 {
+      margin-top: 10px;
+      font-size: 22px;
+      color: #00eaff;
+      font-family: "Pacifico", cursive;
+      text-shadow: 0 0 15px #00eaff99;
+    }
+
+    #default-page .social-icons img {
+      width: 45px;
+      margin: 12px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px #00eaffaa;
+    }
+
+    /* MODAL STYLES */
+    #default-page .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+      padding-top: 60px;
+    }
+
+    #default-page .modal-content {
+      position: relative;
+      background: linear-gradient(135deg, #1a0033, #320059, #000522);
+      margin: 5% auto;
+      padding: 30px;
+      border: 2px solid #00eaff66;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #00eaff44;
+      text-align: center;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    #default-page .modal-img {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      border: 2px solid #00eaff44;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    #default-page .modal-details {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #e5dfff;
+      text-align: left;
+      padding: 0 15px;
+      font-weight: 400;
+    }
+
+    #default-page .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      background: rgba(255, 0, 128, 0.2);
+      padding: 5px 10px;
+      border: 1px solid #ff00ff;
+      border-radius: 0;
+      box-shadow: 0 0 10px #ff00ff88;
+    }
+
+    #default-page .close:hover,
+    #default-page .close:focus {
+      color: #ffea00;
+      background: rgba(255, 0, 128, 0.4);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      #default-page .courses { grid-template-columns: 1fr; }
+      #default-page h1 { font-size: 30px; }
+      #default-page .teacher-box { grid-template-columns: 1fr; }
+    }
+
+    /* Main Website Styles */
     :root {
       --primary: #4CB0D8; /* Vibrant blue */
       --primary-dark: #2A8FB8; /* Dark blue for depth */
@@ -229,6 +543,7 @@
       height: auto;
       display: none;
       transition: opacity 0.5s ease-in-out;
+      cursor: pointer;
     }
 
     .slideshow-image.active {
@@ -1951,6 +2266,127 @@
   </style>
 </head>
 <body>
+  <!-- Default Landing Page -->
+  <div id="default-page">
+    <header>
+      <div class="logo">
+        <h3>BOM</h3></div>
+    </header>
+
+    <h1>বাংলাদেশ অনলাইন মাদ্রাসা</h1>
+    <h2>দেশজুড়ে মাদ্রাসা শিক্ষার্থীদের বিশ্বস্ত শিক্ষা সঙ্গী</h2>
+
+    <div class="teacher-banner">
+      <img src="https://i.imgur.com/CR18xz1.jpeg" alt="">
+    </div>
+
+    <button class="main-btn" id="main-website-btn">আপনার এনরোলকৃত কোর্স</button>
+
+    <!-- MOTIVATION AREA -->
+    <div class="motivation-box">
+      <p id="motivationText">শেখা মানে প্রতিদিন এক ধাপ এগিয়ে যাওয়া।</p>
+    </div>
+
+    <!-- COURSES -->
+    <div class="courses">
+
+      <div class="course-box">
+        <div class="course-img">
+          <img src="COURSE_IMAGE_1" alt="">
+        </div>
+        <p class="details-btn" data-course="1">ডিটেল্স</p>
+      </div>
+
+      <div class="course-box">
+        <div class="course-img">
+          <img src="COURSE_IMAGE_2" alt="">
+        </div>
+        <p class="details-btn" data-course="2">ডিটেল্স</p>
+      </div>
+
+      <div class="course-box">
+        <div class="course-img">
+          <img src="COURSE_IMAGE_3" alt="">
+        </div>
+        <p class="details-btn" data-course="3">ডিটেল্স</p>
+      </div>
+
+      <div class="course-box">
+        <div class="course-img">
+          <img src="COURSE_IMAGE_4" alt="">
+        </div>
+        <p class="details-btn" data-course="4">ডিটেল্স</p>
+      </div>
+
+    </div>
+
+    <!-- TEACHER BOX -->
+    <div class="teacher-box" aria-label="Teachers">
+      <!-- Riab Hasan -->
+      <div class="single-teacher" role="article" aria-label="Riab Hasan">
+        <img src="https://i.imgur.com/Dl21S5x.jpeg" alt="Riab Hasan">
+        <div class="t-name">Riad Hasan</div>
+        <div class="t-position">CEO &amp; Founder</div>
+        <div class="t-exp">Experience: 6 Years</div>
+        <div class="t-summary">
+          Riad Hasan is the visionary founder and CEO of Bangladesh Online Madrasa. He studied at the International Islamic University Chittagong (IIUC) and focuses on integrating technology with education to create accessible learning platforms.
+        </div>
+      </div>
+
+      <!-- Arabic Language Teacher -->
+      <div class="single-teacher" role="article" aria-label="Arabic Language Teacher">
+        <img src="https://i.imgur.com/xbCkScP.jpeg" alt="Arabic Language Teacher">
+        <div class="t-name">Md. Osman Goni</div>
+        <div class="t-position">Lecturer in Arabic</div>
+        <div class="t-exp">Experience: 15 Years</div>
+        <div class="t-summary">
+          A skilled Arabic language instructor with academic training from the Islamic University, Kushtia. Uses clear explanation and structured lessons to build students' understanding of Arabic and Islamic studies.
+        </div>
+      </div>
+
+      <!-- Dh Shipon -->
+      <div class="single-teacher" role="article" aria-label="Dh Shipon">
+        <img src="https://i.imgur.com/TbM78cK.jpeg" alt="Dh Shipon">
+        <div class="t-name">Dh Shipon</div>
+        <div class="t-position">Lecturer, Department of English</div>
+        <div class="t-exp">Experience: 13 Years</div>
+        <div class="t-summary">
+          Dh Shipon is a dedicated English educator with B.A. (Honours) and M.A. (First Class) from the University of Chittagong. He focuses on literature and effective, engaging teaching methods.
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+
+      <h3>Md Riad Hasan</h3>
+      <p>CEO & Founder</p>
+
+      <br>
+
+      <p>📍 ঠিকানা: Level-4, 34, Banani, Dhaka</p>
+      <p>📞 হেল্পলাইন: 01XXXXXXXXX</p>
+      <p>📧 ইমেইল: YOUR_SUPPORT_EMAIL</p>
+
+      <div class="social-icons">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+      </div>
+
+      <p style="opacity:0.7; margin-top:20px;">© বাংলাদেশ অনলাইন মাদ্রাসা 2025 — All Rights Reserved</p>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="courseModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modalImage" class="modal-img" src="" alt="">
+        <div id="modalDetails" class="modal-details"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Website Content (Hidden by Default) -->
   <!-- Loading Overlay -->
   <div id="loading-overlay" class="hidden">
     <div class="loading-box">
@@ -1963,7 +2399,7 @@
     </div>
   </div>
 
-  <div id="login-page">
+  <div id="login-page" style="display: none;">
     <div class="login-container">
       <div class="welcome-message">
         <h1 class="bangla-font">ALIM-27 "Top Achievers Ignition Batch"</h1>
@@ -2085,7 +2521,7 @@
         <a class="pill subject-link" href="#" data-name="ইক্সাম"><span><i class="fas fa-file-alt"></i> <span class="bangla-font">ইক্সাম</span></span><span class="go bangla-font">খুলুন</span></a>
         <a class="pill subject-link" href="#" data-name="ক্লাসের লেকচার শীট"><span><i class="fas fa-file-pdf"></i> <span class="bangla-font">ক্লাসের লেকচার শীট</span></span><span class="go bangla-font">খুলুন</span></a>
         <a class="pill subject-link" href="#" data-name="পরীক্ষার রেজাল্ট শীট"><span><i class="fas fa-chart-bar"></i> <span class="bangla-font">পরীক্ষার রেজাল্ট শীট</span></span><span class="go bangla-font">খুলুন</span></a>
-        <a class="pill subject-link" href="#" data-name="অন্যান্য"><span><i class="fas fa-ellipsis-h"></i> <span class="bangla-font">অন্যান্য</span></span><span class="go bangla-font">খুলুন</span></a>
+        <a class="pill subject-link" href="#" data-name="সাজেশন্স"><span><i class="fas fa-ellipsis-h"></i> <span class="bangla-font">সাজেশন্স</span></span><span class="go bangla-font">খুলুন</span></a>
           </div>
     </main>
     <div class="container">
@@ -2229,1130 +2665,1431 @@
 <div class="success-message" id="successMessage">ফর্ম সফলভাবে জমা হয়েছে!</div>
 <div id="notification" class="notification"></div>
   <script>
-    // এটি অপরিবর্তিত রাখা হয়েছে কারণ আপনি শুধুমাত্র CSS পরিবর্তন চেয়েছিলেন
-    const API_URL = "https://script.google.com/macros/s/AKfycbzpPx0YmWHgDCp7_KmvV7CB36mbKSuQD9XqBPtlgZ03k3gUiI6ki5y0hTsO0wp0VPWd0w/exec";
-
-function $(sel, root = document) { return root.querySelector(sel); }
-function $all(sel, root = document) { return Array.from(root.querySelectorAll(sel)); }
-
-let currentSubject = null;
-let highlightedClassTimestamp = null;
-const loginPage = $('#login-page');
-const mainPage = $('#main-page');
-const subjectPage = $('#subject-page');
-const warningModal = $('#warning-modal');
-const loadingModal = $('#loading-modal');
-const loadingOverlay = $('#loading-overlay'); // New loading overlay
-let allClasses = [];
-let groupedClassesCache = {};
-let mainScrollPosition = 0; // New: To save main page scroll position
-
-const availableSubjects = [
-      "কুরআন মাজীদ",
-      "হাদীস ও উসূলুল হাদীস",
-      "আল ফিকহ প্রথম পত্র",
-      "আল ফিকহ দ্বিতীয় পত্র",
-      "আরবি প্রথম পত্র",
-      "আরবি দ্বিতীয় পত্র",
-      "আরবি সাহিত্য",
-      "বালাগাত ও মানতিক",
-      "বাংলা প্রথম পত্র",
-      "বাংলা দ্বিতীয় পত্র",
-      "ইংরেজি প্রথম পত্র",
-      "ইংরেজি দ্বিতীয় পত্র",
-      "ইসলামের ইতিহাস",
-      "তথ্য ও যোগাযোগ প্রযুক্তি",
-      "পদার্থবিজ্ঞান প্রথম পত্র",
-      "পদার্থবিজ্ঞান দ্বিতীয় পত্র",
-      "রসায়ন প্রথম পত্র",
-      "রসায়ন দ্বিতীয় পত্র",
-      "জীববিজ্ঞান প্রথম পত্র",
-      "জীববিজ্ঞান দ্বিতীয় পত্র",
-      "অর্থনীতি প্রথম পত্র",
-      "অর্থনীতি দ্বিতীয় পত্র",
-      "পৌরনীতি ও সুশাসন প্রথম পত্র",
-      "পৌরনীতি ও সুশাসন দ্বিতীয় পত্র",
-      "উচ্চতর গণিত প্রথম পত্র",
-      "উচ্চতর গণিত দ্বিতীয় পত্র",
-      "মিশন",
-      "ইক্সাম",
-      "ক্লাসের লেকচার শীট",
-      "পরীক্ষার রেজাল্ট শীট",
-      "অন্যান্য"
+    // Default Page Functionality
+    let motivationList = [
+      "শেখা বন্ধ হলে উন্নতি বন্ধ হয়ে যায়।",
+      "আপনি পারবে — শুধু শুরুটা করে ফেলুন।",
+      "ধৈর্য আর পরিশ্রমই সফলতার চাবিকাঠি।",
+      "প্রতিদিন ছোট ছোট উন্নতিই বড় সফলতা আনে।",
+      "জ্ঞানই মানুষের আসল শক্তি।",
+      "যে চেষ্টা করে, আল্লাহ তার পথ খুলে দেন।"
     ];
 
-const LOGIN_EXPIRY_KEY = 'alim27_login_expiry';
-const IS_LOGGED_IN_KEY = 'alim27_is_logged_in';
-const USER_ROLE_KEY = 'alim27_user_role';
+    let mIndex = 0;
 
-// Dashboard-specific storage keys (unique to avoid conflicts)
-const DASHBOARD_STORAGE_KEYS = {
-  STUDENT_NAME: 'alim27_dashboard_student_name',
-  JOIN_DATE: 'alim27_dashboard_join_date',
-  LAST_LOGIN: 'alim27_dashboard_last_login',
-  LAST_ACTIVITY: 'alim27_dashboard_last_activity',
-  COMPLETED_ITEMS: 'alim27_dashboard_completed_items',
-  NOTES: 'alim27_dashboard_notes'
-};
+    function rotateMotivationText() {
+      mIndex = (mIndex + 1) % motivationList.length;
+      document.getElementById("motivationText").innerText = motivationList[mIndex];
+    }
 
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+    // Set initial motivation text
+    document.getElementById("motivationText").innerText = motivationList[mIndex];
+    
+    // Start rotating motivation text every 5 seconds
+    setInterval(rotateMotivationText, 5000);
 
-function setLoginExpiry(role) {
-  // No expiry time set for lifetime access
-  localStorage.setItem(IS_LOGGED_IN_KEY, 'true');
-  localStorage.setItem(USER_ROLE_KEY, role);
-}
+    // Course Details Data (Demo)
+    const courseDetails = {
+      1: {
+        img: "COURSE_IMAGE_1",
+        details: "এটি আরবি ভাষা কোর্সের ডেমো। এখানে ব্যাকরণ, শব্দভান্ডার, এবং কথোপকথনের পাঠ অন্তর্ভুক্ত। এই কোর্সটি শিক্ষার্থীদের আরবি ভাষায় দক্ষতা অর্জন করতে সাহায্য করে। আরও বিস্তারিত তথ্য: সপ্তাহে ৩টি ক্লাস, মোট ১২টি মডিউল, এবং প্র্যাকটিস সেশন। এটি একটি দীর্ঘ টেক্সট যাতে স্ক্রল করা যায়: লোরেম ইপসাম ডলর সিট আমেট, কনসেকটেটুর অ্যাডিপিসিং এলিট। সেড ডো ইউসমোড টেম্পোর ইনসিডিডান্ট উট ল্যাবোরে এট ডলোরে ম্যাগনা অ্যালিকুয়া। উট এনিম অ্যাড মিনিম ভেনিয়াম, কুইস নস্ট্রুড এক্সারসিটেশন উল্লামকো ল্যাবোরিস নিসি উট অ্যালিকুইপ এক্স ইএ কমোডো কনসেকুয়াট। ডুইস অটে ইরুরে ডলর ইন রেপ্রেহেন্ডেরিট ইন ভলুপটেট ভেলিট এসে সিল্লুম ডলোরে ইউ ফুগিয়াট নুল্লা প্যারিয়াটুর। এক্সসেপ্টুর সিন্ট অককায়েকাট কুপিডাটাট নন প্রোইডেন্ট, সান্ট ইন কুলপা কুই অফিশিয়া ডেসেরান্ট মোল্লিট অ্যানিম ইড এস্ট ল্যাবোরাম।"
+      },
+      2: {
+        img: "COURSE_IMAGE_2",
+        details: "এটি ইসলামিক স্টাডিজ কোর্সের ডেমো। এখানে কুরআন, হাদিস, এবং ফিকহের পাঠ অন্তর্ভুক্ত। এই কোর্সটি শিক্ষার্থীদের ইসলামিক জ্ঞান বৃদ্ধি করে। আরও বিস্তারিত তথ্য: সপ্তাহে ৪টি ক্লাস, মোট ১০টি মডিউল, এবং কুইজ। এটি একটি দীর্ঘ টেক্সট যাতে স্ক্রল করা যায়: লোরেম ইপসাম ডলর সিট আমেট, কনসেকটেটুর অ্যাডিপিসিং এলিট। সেড ডো ইউসমোড টেম্পোর ইনসিডিডান্ট উট ল্যাবোরে এট ডলোরে ম্যাগনা অ্যালিকুয়া। উট এনিম অ্যাড মিনিম ভেনিয়াম, কুইস নস্ট্রুড এক্সারসিটেশন উল্লামকো ল্যাবোরিস নিসি উট অ্যালিকুইপ এক্স ইএ কমোডো কনসেকুয়াট। ডুইস অটে ইরুরে ডলর ইন রেপ্রেহেন্ডেরিট ইন ভলুপটেট ভেলিট এসে সিল্লুম ডলোরে ইউ ফুগিয়াট নুল্লা প্যারিয়াটুর। এক্সসেপ্টুর সিন্ট অককায়েকাট কুপিডাটাট নন প্রোইডেন্ট, সান্ট ইন কুলপা কুই অফিশিয়া ডেসেরান্ট মোল্লিট অ্যানিম ইড এস্ট ল্যাবোরাম।"
+      },
+      3: {
+        img: "COURSE_IMAGE_3",
+        details: "এটি ইংরেজি কোর্সের ডেমো। এখানে গ্রামার, লিটারেচার, এবং কনভারসেশনের পাঠ অন্তর্ভুক্ত। এই কোর্সটি শিক্ষার্থীদের ইংরেজিতে দক্ষতা অর্জন করতে সাহায্য করে। আরও বিস্তারিত তথ্য: সপ্তাহে ৩টি ক্লাস, মোট ৮টি মডিউল, এবং অ্যাসাইনমেন্ট। এটি একটি দীর্ঘ টেক্সট যাতে স্ক্রল করা যায়: লোরেম ইপসাম ডলর সিট আমেট, কনসেকটেটুর অ্যাডিপিসিং এলিট। সেড ডো ইউসমোড টেম্পোর ইনসিডিডান্ট উট ল্যাবোরে এট ডলোরে ম্যাগনা অ্যালিকুয়া। উট এনিম অ্যাড মিনিম ভেনিয়াম, কুইস নস্ট্রুড এক্সারসিটেশন উল্লামকো ল্যাবোরিস নিসি উট অ্যালিকুইপ এক্স ইএ কমোডো কনসেকুয়াট। ডুইস অটে ইরুরে ডলর ইন রেপ্রেহেন্ডেরিট ইন ভলুপটেট ভেলিট এসে সিল্লুম ডলোরে ইউ ফুগিয়াট নুল্লা প্যারিয়াটুর। এক্সসেপ্টুর সিন্ট অককায়েকাট কুপিডাটাট নন প্রোইডেন্ট, সান্ট ইন কুলপা কুই অফিশিয়া ডেসেরান্ট মোল্লিট অ্যানিম ইড এস্ট ল্যাবোরাম।"
+      },
+      4: {
+        img: "COURSE_IMAGE_4",
+        details: "এটি কুরআন তিলাওয়াত কোর্সের ডেমো। এখানে তাজবীদ, মখরাজ, এবং রেকর্ডিংয়ের পাঠ অন্তর্ভুক্ত। এই কোর্সটি শিক্ষার্থীদের কুরআন পড়ায় দক্ষতা অর্জন করতে সাহায্য করে। আরও বিস্তারিত তথ্য: সপ্তাহে ২টি ক্লাস, মোট ১৫টি মডিউল, এবং প্র্যাকটিস। এটি একটি দীর্ঘ টেক্সট যাতে স্ক্রল করা যায়: লোরেম ইপসাম ডলর সিট আমেট, কনসেকটেটুর অ্যাডিপিসিং এলিট। সেড ডো ইউসমোড টেম্পোর ইনসিডিডান্ট উট ল্যাবোরে এট ডলোরে ম্যাগনা অ্যালিকুয়া। উট এনিম অ্যাড মিনিম ভেনিয়াম, কুইস নস্ট্রুড এক্সারসিটেশন উল্লামকো ল্যাবোরис নিসি উট অ্যালিকুইপ এক্স ইএ কমোডো কনসেকুয়াট। ডুইস অটে ইরুরে ডলর ইন রেপ্রেহেন্ডেরিট ইন ভলুপটেট ভেলিট এসে সিল্লুম ডলোরে ইউ ফুগিয়াট নুল্লা প্যারিয়াটুর। এক্সসেপ্টুর সিন্ট অককায়েকাট কুপিডাটাট নন প্রোইডেন্ট, সান্ট ইন কুলপা কুই অফিশিয়া ডেসেরান্ট মোল্লিট অ্যানিম ইড এস্ট ল্যাবোরাম।"
+      }
+    };
 
-function checkLoginExpiry() {
-  const isLoggedIn = localStorage.getItem(IS_LOGGED_IN_KEY);
-  return isLoggedIn === 'true';
-}
+    // Modal Functionality for default page
+    const modal = document.getElementById("courseModal");
+    const modalImg = document.getElementById("modalImage");
+    const modalDetails = document.getElementById("modalDetails");
+    const closeBtn = document.getElementsByClassName("close")[0];
 
-function getUserRole() {
-  return localStorage.getItem(USER_ROLE_KEY) || 'user';
-}
+    document.querySelectorAll(".details-btn").forEach(btn => {
+      btn.addEventListener("click", function() {
+        const courseId = this.getAttribute("data-course");
+        const course = courseDetails[courseId];
+        modalImg.src = course.img;
+        modalDetails.innerHTML = course.details;
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden"; // Prevent background scrolling
+      });
+    });
 
-function logout() {
-  localStorage.removeItem(IS_LOGGED_IN_KEY);
-  localStorage.removeItem(USER_ROLE_KEY);
-  loginPage.style.display = 'flex';
-  mainPage.style.display = 'none';
-  subjectPage.style.display = 'none';
-}
+    closeBtn.addEventListener("click", function() {
+      modal.style.display = "none";
+      document.body.style.overflow = ""; // Restore scrolling
+    });
 
-function showWarningModal() {
-  warningModal.classList.add('show');
-}
+    window.addEventListener("click", function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = ""; // Restore scrolling
+      }
+    });
 
-function closeWarningModal() {
-  warningModal.classList.remove('show');
-}
+    // Main Website Functionality
+    const API_URL = "https://script.google.com/macros/s/AKfycbzpPx0YmWHgDCp7_KmvV7CB36mbKSuQD9XqBPtlgZ03k3gUiI6ki5y0hTsO0wp0VPWd0w/exec";
 
-// New loading overlay functions
-function showLoadingOverlay() {
-  loadingOverlay.classList.remove('hidden');
-}
+    function $(sel, root = document) { return root.querySelector(sel); }
+    function $all(sel, root = document) { return Array.from(root.querySelectorAll(sel)); }
 
-function hideLoadingOverlay() {
-  loadingOverlay.classList.add('hidden');
-}
+    let currentSubject = null;
+    let highlightedClassTimestamp = null;
+    const loginPage = $('#login-page');
+    const mainPage = $('#main-page');
+    const subjectPage = $('#subject-page');
+    const defaultPage = $('#default-page');
+    const warningModal = $('#warning-modal');
+    const loadingModal = $('#loading-modal');
+    const loadingOverlay = $('#loading-overlay'); // New loading overlay
+    let allClasses = [];
+    let groupedClassesCache = {};
+    let mainScrollPosition = 0; // New: To save main page scroll position
 
-function updateLoadingProgress(progress) {
-  const progressBar = $('#loading-progress-bar');
-  if (progressBar) {
-    progressBar.style.width = `${progress}%`;
-  }
-}
+    const availableSubjects = [
+          "কুরআন মাজীদ",
+          "হাদীস ও উসূলুল হাদীস",
+          "আল ফিকহ প্রথম পত্র",
+          "আল ফিকহ দ্বিতীয় পত্র",
+          "আরবি প্রথম পত্র",
+          "আরবি দ্বিতীয় পত্র",
+          "আরবি সাহিত্য",
+          "বালাগাত ও মানতিক",
+          "বাংলা প্রথম পত্র",
+          "বাংলা দ্বিতীয় পত্র",
+          "ইংরেজি প্রথম পত্র",
+          "ইংরেজি দ্বিতীয় পত্র",
+          "ইসলামের ইতিহাস",
+          "তথ্য ও যোগাযোগ প্রযুক্তি",
+          "পদার্থবিজ্ঞান প্রথম পত্র",
+          "পদার্থবিজ্ঞান দ্বিতীয় পত্র",
+          "রসায়ন প্রথম পত্র",
+          "রসায়ন দ্বিতীয় পত্র",
+          "জীববিজ্ঞান প্রথম পত্র",
+          "জীববিজ্ঞান দ্বিতীয় পত্র",
+          "অর্থনীতি প্রথম পত্র",
+          "অর্থনীতি দ্বিতীয় পত্র",
+          "পৌরনীতি ও সুশাসন প্রথম পত্র",
+          "পৌরনীতি ও সুশাসন দ্বিতীয় পত্র",
+          "উচ্চতর গণিত প্রথম পত্র",
+          "উচ্চতর গণিত দ্বিতীয় পত্র",
+          "মিশন",
+          "ইক্সাম",
+          "ক্লাসের লেকচার শীট",
+          "পরীক্ষার রেজাল্ট শীট",
+          "সাজেশন্স"
+        ];
 
-function showLoadingModal() {
-  loadingModal.style.display = 'flex';
-}
+    const LOGIN_EXPIRY_KEY = 'alim27_login_expiry';
+    const IS_LOGGED_IN_KEY = 'alim27_is_logged_in';
+    const USER_ROLE_KEY = 'alim27_user_role';
+    const HAS_VISITED_MAIN_KEY = 'alim27_has_visited_main';
 
-function hideLoadingModal() {
-  loadingModal.style.display = 'none';
-}
+    // Dashboard-specific storage keys (unique to avoid conflicts)
+    const DASHBOARD_STORAGE_KEYS = {
+      STUDENT_NAME: 'alim27_dashboard_student_name',
+      JOIN_DATE: 'alim27_dashboard_join_date',
+      LAST_LOGIN: 'alim27_dashboard_last_login',
+      LAST_ACTIVITY: 'alim27_dashboard_last_activity',
+      COMPLETED_ITEMS: 'alim27_dashboard_completed_items',
+      NOTES: 'alim27_dashboard_notes'
+    };
 
-function showNotification(message, isError = false, isWarning = false) {
-  const notification = $('#notification');
-  notification.innerHTML = "<i class=\"" + (isError ? 'fas fa-exclamation-circle' : isWarning ? 'fas fa-exclamation-triangle' : 'fas fa-check-circle') + "\"></i> " + message;
-  notification.className = 'notification ' + (isError ? 'error' : isWarning ? 'warning' : 'success');
-  notification.classList.add('show');
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-  setTimeout(() => {
-    notification.classList.remove('show');
-  }, 3000);
-}
+    function setLoginExpiry(role) {
+      // No expiry time set for lifetime access
+      localStorage.setItem(IS_LOGGED_IN_KEY, 'true');
+      localStorage.setItem(USER_ROLE_KEY, role);
+    }
 
-function checkPassword() {
-  const password = $('#password').value.trim();
-  const errorElement = $('#error-message');
-  
-  if (password === 'USERALIM27') {
-    setLoginExpiry('user');
-    loginPage.style.display = 'none';
-    mainPage.style.display = 'block';
-    showWarningModal();
-    showLoadingOverlay(); // Show loading overlay
-    loadInitialData();
-    showDashboardButton();
-    scrollToTop();
-  } else if (password === 'OWNERALIM27') {
-    setLoginExpiry('owner');
-    loginPage.style.display = 'none';
-    mainPage.style.display = 'block';
-    showWarningModal();
-    showLoadingOverlay(); // Show loading overlay
-    loadInitialData();
-    scrollToTop();
-  } else if (password === 'EDITOR@BOM-435') {
-    setLoginExpiry('editor');
-    loginPage.style.display = 'none';
-    mainPage.style.display = 'block';
-    showWarningModal();
-    showLoadingOverlay(); // Show loading overlay
-    loadInitialData();
-    scrollToTop();
-  } else {
-    errorElement.style.display = 'block';
-    setTimeout(() => {
-      errorElement.style.display = 'none';
-    }, 3000);
-  }
-}
+    function checkLoginExpiry() {
+      const isLoggedIn = localStorage.getItem(IS_LOGGED_IN_KEY);
+      return isLoggedIn === 'true';
+    }
 
-function showDashboardButton() {
-  const dashboardBtn = $('#dashboard-btn');
-  const role = getUserRole();
-  if (role === 'user' || role === 'editor') {
-    dashboardBtn.style.display = 'inline-flex';
-  }
-}
+    function getUserRole() {
+      return localStorage.getItem(USER_ROLE_KEY) || 'user';
+    }
 
-function showAddClassButton() {
-  const addClassBtn = $('#add-class-btn');
-  if (addClassBtn && (getUserRole() === 'owner' || getUserRole() === 'editor')) {
-    addClassBtn.style.display = 'inline-flex';
-  }
-}
+    function logout() {
+      localStorage.removeItem(IS_LOGGED_IN_KEY);
+      localStorage.removeItem(USER_ROLE_KEY);
+      loginPage.style.display = 'flex';
+      mainPage.style.display = 'none';
+      subjectPage.style.display = 'none';
+    }
 
-$('#password').addEventListener('keypress', function(e) {
-  if (e.key === 'Enter') {
-    checkPassword();
-  }
-});
+    function showWarningModal() {
+      warningModal.classList.add('show');
+    }
 
-function getDateFromTimestamp(timestamp) {
-  if (!timestamp) return getTodayDate();
+    function closeWarningModal() {
+      warningModal.classList.remove('show');
+    }
 
-  try {
-    const date = new Date(timestamp);
-    if (!isNaN(date)) {
-      const year = date.getFullYear();
-      const month = String(date.getMonth() + 1).padStart(2, '0');
-      const day = String(date.getDate()).padStart(2, '0');
+    // New loading overlay functions
+    function showLoadingOverlay() {
+      loadingOverlay.classList.remove('hidden');
+    }
+
+    function hideLoadingOverlay() {
+      loadingOverlay.classList.add('hidden');
+    }
+
+    function updateLoadingProgress(progress) {
+      const progressBar = $('#loading-progress-bar');
+      if (progressBar) {
+        progressBar.style.width = `${progress}%`;
+      }
+    }
+
+    function showLoadingModal() {
+      loadingModal.style.display = 'flex';
+    }
+
+    function hideLoadingModal() {
+      loadingModal.style.display = 'none';
+    }
+
+    function showNotification(message, isError = false, isWarning = false) {
+      const notification = $('#notification');
+      notification.innerHTML = "<i class=\"" + (isError ? 'fas fa-exclamation-circle' : isWarning ? 'fas fa-exclamation-triangle' : 'fas fa-check-circle') + "\"></i> " + message;
+      notification.className = 'notification ' + (isError ? 'error' : isWarning ? 'warning' : 'success');
+      notification.classList.add('show');
+
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 3000);
+    }
+
+    function checkPassword() {
+      const password = $('#password').value.trim();
+      const errorElement = $('#error-message');
+      
+      if (password === 'USERALIM27') {
+        setLoginExpiry('user');
+        loginPage.style.display = 'none';
+        mainPage.style.display = 'block';
+        showWarningModal();
+        showLoadingOverlay(); // Show loading overlay
+        loadInitialData();
+        showDashboardButton();
+        scrollToTop();
+      } else if (password === 'OWNERALIM27') {
+        setLoginExpiry('owner');
+        loginPage.style.display = 'none';
+        mainPage.style.display = 'block';
+        showWarningModal();
+        showLoadingOverlay(); // Show loading overlay
+        loadInitialData();
+        scrollToTop();
+      } else if (password === 'EDITOR@BOM-435') {
+        setLoginExpiry('editor');
+        loginPage.style.display = 'none';
+        mainPage.style.display = 'block';
+        showWarningModal();
+        showLoadingOverlay(); // Show loading overlay
+        loadInitialData();
+        scrollToTop();
+      } else {
+        errorElement.style.display = 'block';
+        setTimeout(() => {
+          errorElement.style.display = 'none';
+        }, 3000);
+      }
+    }
+
+    function showDashboardButton() {
+      const dashboardBtn = $('#dashboard-btn');
+      const role = getUserRole();
+      if (role === 'user' || role === 'editor') {
+        dashboardBtn.style.display = 'inline-flex';
+      }
+    }
+
+    function showAddClassButton() {
+      const addClassBtn = $('#add-class-btn');
+      if (addClassBtn && (getUserRole() === 'owner' || getUserRole() === 'editor')) {
+        addClassBtn.style.display = 'inline-flex';
+      }
+    }
+
+    $('#password').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        checkPassword();
+      }
+    });
+
+    function getDateFromTimestamp(timestamp) {
+      if (!timestamp) return getTodayDate();
+
+      try {
+        const date = new Date(timestamp);
+        if (!isNaN(date)) {
+          const year = date.getFullYear();
+          const month = String(date.getMonth() + 1).padStart(2, '0');
+          const day = String(date.getDate()).padStart(2, '0');
+          return `${day}-${month}-${year}`; // ফরম্যাট: DD-MM-YYYY
+        }
+        return getTodayDate();
+      } catch (error) {
+        console.error("Timestamp parsing error:", error, timestamp);
+        return getTodayDate();
+      }
+    }
+
+    function getTimeFromTimestamp(timestamp) {
+      if (!timestamp) return '12:00 AM';
+
+      try {
+        const date = new Date(timestamp);
+        if (!isNaN(date)) {
+          return date.toLocaleTimeString('en-US', { 
+            timeZone: 'Asia/Dhaka', 
+            hour: 'numeric', 
+            minute: '2-digit', 
+            hour12: true 
+          });
+        }
+        return '12:00 AM';
+      } catch (error) {
+        console.error("Time parsing error:", error, timestamp);
+        return '12:00 AM';
+      }
+    }
+
+    function getTodayDate() {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      const day = String(today.getDate()).padStart(2, '0');
       return `${day}-${month}-${year}`; // ফরম্যাট: DD-MM-YYYY
     }
-    return getTodayDate();
-  } catch (error) {
-    console.error("Timestamp parsing error:", error, timestamp);
-    return getTodayDate();
-  }
-}
 
-function getTimeFromTimestamp(timestamp) {
-  if (!timestamp) return '12:00 AM';
+    function formatDateToBangla(dateStr) {
+      if (!dateStr) return '';
 
-  try {
-    const date = new Date(timestamp);
-    if (!isNaN(date)) {
-      return date.toLocaleTimeString('en-US', { 
-        timeZone: 'Asia/Dhaka', 
-        hour: 'numeric', 
-        minute: '2-digit', 
-        hour12: true 
+      try {
+        if (/^\d{2}-\d{2}-\d{4}$/.test(dateStr)) {
+          return dateStr; // ইতিমধ্যে DD-MM-YYYY ফরম্যাটে থাকলে রিটার্ন
+        }
+        const [year, month, day] = dateStr.split('-');
+        return `${day}-${month}-${year}`; // ফরম্যাট: DD-MM-YYYY
+      } catch (error) {
+        console.error("Date formatting error:", error, dateStr);
+        return dateStr;
+      }
+    }
+
+    function findBestMatchingSubject(subjectFromSheet) {
+      if (!subjectFromSheet) return null;
+
+      const cleanSubject = subjectFromSheet.toString().trim();
+      for (const availableSubject of availableSubjects) {
+        if (cleanSubject === availableSubject) {
+          return availableSubject;
+        }
+      }
+      return cleanSubject;
+    }
+
+    async function fetchData() {
+      try {
+        updateLoadingProgress(30);
+        const res = await fetch(API_URL, {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+
+        updateLoadingProgress(60);
+        const data = await res.json();
+        if (data && data.ok) {
+          updateLoadingProgress(90);
+          console.log("API Response:", data);
+          return data.rows || [];
+        } else {
+          throw new Error(data.error || "ডেটা লোড করতে সমস্যা");
+        }
+      } catch (error) {
+        console.error("ডেটা লোড করতে সমস্যা:", error);
+        showNotification("ডেটা লোড করা যায়নি: " + error.message, true);
+        return [];
+      }
+    }
+
+    function normalizeRows(rows) {
+      try {
+        updateLoadingProgress(40);
+        // Sort all rows by timestamp ascending for global tracking ID
+        const sortedRows = rows.sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
+
+        // Assign global tracking ID
+        sortedRows.forEach((row, index) => {
+          row.globalId = index + 1;
+        });
+
+        updateLoadingProgress(60);
+        // Group by subject for display serial
+        const groupedBySubject = sortedRows.reduce((acc, row) => {
+          const subjectFromSheet = row.subject || 'Unknown Subject';
+          const matchedSubject = findBestMatchingSubject(subjectFromSheet) || subjectFromSheet;
+          if (!acc[matchedSubject]) {
+            acc[matchedSubject] = [];
+          }
+          acc[matchedSubject].push(row);
+          return acc;
+        }, {});
+
+        const specialFolders = ["মিশন", "ক্লাসের লেকচার শীট", "পরীক্ষার রেজাল্ট শীট", "সাজেশন্স"];
+
+        const normalizedRows = [];
+        Object.keys(groupedBySubject).forEach(subject => {
+          const subjectRows = groupedBySubject[subject].sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
+          subjectRows.forEach((row, index) => {
+            const timestamp = row.timestamp || '';
+            let link = row.link || '#';
+            if (specialFolders.includes(subject)) {
+              link = row.file || row.link || '#';
+            }
+            const title = row.title || (subject === 'মিশন' ? 'মিশন' : subject === 'ইক্সাম' ? 'ইক্সাম' : 'ক্লাস ভিডিও');
+            const date = getDateFromTimestamp(timestamp);
+            const time = getTimeFromTimestamp(timestamp);
+            const displaySerial = index + 1;
+            const type = specialFolders.includes(subject) ? 'special' : subject === 'মিশন' ? 'mission' : subject === 'ইক্সাম' ? 'exam' : 'class';
+
+            normalizedRows.push({
+              subject: subject,
+              originalSubject: row.subject,
+              link: link,
+              title: title,
+              date: date,
+              time: time,
+              displaySerial: displaySerial,
+              timestamp: timestamp,
+              globalId: row.globalId,
+              type: type
+            });
+          });
+        });
+
+        updateLoadingProgress(80);
+        return normalizedRows;
+      } catch (error) {
+        console.error("Rows normalization error:", error);
+        return [];
+      }
+    }
+
+    function isExamTimeExpired(timestamp) {
+      if (!timestamp) return false;
+      try {
+        const examTime = new Date(timestamp).getTime();
+        const now = new Date().getTime();
+        const twentyFourHoursInMs = 24 * 60 * 60 * 1000;
+        return (now - examTime) > twentyFourHoursInMs;
+      } catch (error) {
+        console.error("Exam expiry check error:", error, timestamp);
+        return false;
+      }
+    }
+
+    function filterClassesByTimeRange(range) {
+      const now = new Date();
+      const today = getTodayDate(); // DD-MM-YYYY ফরম্যাটে আজকের তারিখ
+
+      if (range === 'today') {
+        return allClasses.filter(cls => cls && cls.date === today);
+      } else if (range === 'all') {
+        return allClasses;
+      }
+
+      const weekAgo = new Date(now.setDate(now.getDate() - 7));
+      const monthAgo = new Date(now.setMonth(now.getMonth() - 1));
+
+      return allClasses.filter(cls => {
+        if (!cls || !cls.date) return false;
+        const classDateParts = cls.date.split('-'); // DD-MM-YYYY ফরম্যাট
+        const classDate = new Date(`${classDateParts[2]}-${classDateParts[1]}-${classDateParts[0]}`);
+        
+        if (range === 'week') {
+          return classDate >= weekAgo && classDate <= new Date();
+        } else if (range === 'month') {
+          return classDate >= monthAgo && classDate <= new Date();
+        }
+        return true;
       });
     }
-    return '12:00 AM';
-  } catch (error) {
-    console.error("Time parsing error:", error, timestamp);
-    return '12:00 AM';
-  }
-}
 
-function getTodayDate() {
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, '0');
-  const day = String(today.getDate()).padStart(2, '0');
-  return `${day}-${month}-${year}`; // ফরম্যাট: DD-MM-YYYY
-}
-
-function formatDateToBangla(dateStr) {
-  if (!dateStr) return '';
-
-  try {
-    if (/^\d{2}-\d{2}-\d{4}$/.test(dateStr)) {
-      return dateStr; // ইতিমধ্যে DD-MM-YYYY ফরম্যাটে থাকলে রিটার্ন
-    }
-    const [year, month, day] = dateStr.split('-');
-    return `${day}-${month}-${year}`; // ফরম্যাট: DD-MM-YYYY
-  } catch (error) {
-    console.error("Date formatting error:", error, dateStr);
-    return dateStr;
-  }
-}
-
-function findBestMatchingSubject(subjectFromSheet) {
-  if (!subjectFromSheet) return null;
-
-  const cleanSubject = subjectFromSheet.toString().trim();
-  for (const availableSubject of availableSubjects) {
-    if (cleanSubject === availableSubject) {
-      return availableSubject;
-    }
-  }
-  return cleanSubject;
-}
-
-async function fetchData() {
-  try {
-    updateLoadingProgress(30);
-    const res = await fetch(API_URL, {
-      method: 'GET',
-      headers: {
-        'Accept': 'application/json'
+    function groupClassesBySubject(classes) {
+      if (groupedClassesCache[JSON.stringify(classes)]) {
+        return groupedClassesCache[JSON.stringify(classes)];
       }
-    });
 
-    if (!res.ok) {
-      throw new Error(`HTTP error! status: ${res.status}`);
-    }
-
-    updateLoadingProgress(60);
-    const data = await res.json();
-    if (data && data.ok) {
-      updateLoadingProgress(90);
-      console.log("API Response:", data);
-      return data.rows || [];
-    } else {
-      throw new Error(data.error || "ডেটা লোড করতে সমস্যা");
-    }
-  } catch (error) {
-    console.error("ডেটা লোড করতে সমস্যা:", error);
-    showNotification("ডেটা লোড করা যায়নি: " + error.message, true);
-    return [];
-  }
-}
-
-function normalizeRows(rows) {
-  try {
-    updateLoadingProgress(40);
-    // Sort all rows by timestamp ascending for global tracking ID
-    const sortedRows = rows.sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
-
-    // Assign global tracking ID
-    sortedRows.forEach((row, index) => {
-      row.globalId = index + 1;
-    });
-
-    updateLoadingProgress(60);
-    // Group by subject for display serial
-    const groupedBySubject = sortedRows.reduce((acc, row) => {
-      const subjectFromSheet = row.subject || 'Unknown Subject';
-      const matchedSubject = findBestMatchingSubject(subjectFromSheet) || subjectFromSheet;
-      if (!acc[matchedSubject]) {
-        acc[matchedSubject] = [];
-      }
-      acc[matchedSubject].push(row);
-      return acc;
-    }, {});
-
-    const specialFolders = ["মিশন", "ক্লাসের লেকচার শীট", "পরীক্ষার রেজাল্ট শীট", "অন্যান্য"];
-
-    const normalizedRows = [];
-    Object.keys(groupedBySubject).forEach(subject => {
-      const subjectRows = groupedBySubject[subject].sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
-      subjectRows.forEach((row, index) => {
-        const timestamp = row.timestamp || '';
-        let link = row.link || '#';
-        if (specialFolders.includes(subject)) {
-          link = row.file || row.link || '#';
+      const grouped = classes.reduce((acc, cls) => {
+        if (!cls || !cls.subject) return acc;
+        if (!acc[cls.subject]) {
+          acc[cls.subject] = [];
         }
-        const title = row.title || (subject === 'মিশন' ? 'মিশন' : subject === 'ইক্সাম' ? 'ইক্সাম' : 'ক্লাস ভিডিও');
-        const date = getDateFromTimestamp(timestamp);
-        const time = getTimeFromTimestamp(timestamp);
-        const displaySerial = index + 1;
-        const type = specialFolders.includes(subject) ? 'special' : subject === 'মিশন' ? 'mission' : subject === 'ইক্সাম' ? 'exam' : 'class';
+        acc[cls.subject].push(cls);
+        return acc;
+      }, {});
 
-        normalizedRows.push({
-          subject: subject,
-          originalSubject: row.subject,
-          link: link,
-          title: title,
-          date: date,
-          time: time,
-          displaySerial: displaySerial,
-          timestamp: timestamp,
-          globalId: row.globalId,
-          type: type
+      // প্রতিটি সাবজেক্টের ক্লাসগুলোকে টাইমস্ট্যাম্প অনুযায়ী সাজানো (নতুন থেকে পুরানো)
+      Object.keys(grouped).forEach(subject => {
+        grouped[subject].sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+      });
+
+      groupedClassesCache[JSON.stringify(classes)] = grouped;
+      return grouped;
+    }
+
+    function renderTodayClassesSummary(classes) {
+      const container = $('#today-classes-body');
+      const sortValue = $('#sort-classes').value;
+
+      if (!classes || classes.length === 0) {
+        container.innerHTML = `<tr><td colspan="3" class="bangla-font" style="text-align: center; padding: 20px;">আজকের জন্য কোন ক্লাস পাওয়া যায়নি</td></tr>`;
+        return;
+      }
+
+      let tableHTML = '';
+      classes.forEach(cls => {
+        if (!cls) return;
+        const displayValue = sortValue === 'today' ? cls.time : cls.date;
+        tableHTML += `
+          <tr data-subject="${cls.subject}" data-timestamp="${cls.timestamp}">
+            <td><span class="subject-badge bangla-font">${cls.subject}</span></td>
+            <td class="class-info bangla-font">${cls.title}</td>
+            <td class="bangla-font">${displayValue}</td>
+          </tr>
+        `;
+      });
+      container.innerHTML = tableHTML;
+
+      $all('#today-classes-body tr').forEach(row => {
+        row.addEventListener('click', () => {
+          const subject = row.getAttribute('data-subject');
+          highlightedClassTimestamp = row.getAttribute('data-timestamp');
+          showSubjectPage(subject, true);
         });
       });
-    });
-
-    updateLoadingProgress(80);
-    return normalizedRows;
-  } catch (error) {
-    console.error("Rows normalization error:", error);
-    return [];
-  }
-}
-
-function isExamTimeExpired(timestamp) {
-  if (!timestamp) return false;
-  try {
-    const examTime = new Date(timestamp).getTime();
-    const now = new Date().getTime();
-    const twentyFourHoursInMs = 24 * 60 * 60 * 1000;
-    return (now - examTime) > twentyFourHoursInMs;
-  } catch (error) {
-    console.error("Exam expiry check error:", error, timestamp);
-    return false;
-  }
-}
-
-function filterClassesByTimeRange(range) {
-  const now = new Date();
-  const today = getTodayDate(); // DD-MM-YYYY ফরম্যাটে আজকের তারিখ
-
-  if (range === 'today') {
-    return allClasses.filter(cls => cls && cls.date === today);
-  } else if (range === 'all') {
-    return allClasses;
-  }
-
-  const weekAgo = new Date(now.setDate(now.getDate() - 7));
-  const monthAgo = new Date(now.setMonth(now.getMonth() - 1));
-
-  return allClasses.filter(cls => {
-    if (!cls || !cls.date) return false;
-    const classDateParts = cls.date.split('-'); // DD-MM-YYYY ফরম্যাট
-    const classDate = new Date(`${classDateParts[2]}-${classDateParts[1]}-${classDateParts[0]}`);
-    
-    if (range === 'week') {
-      return classDate >= weekAgo && classDate <= new Date();
-    } else if (range === 'month') {
-      return classDate >= monthAgo && classDate <= new Date();
-    }
-    return true;
-  });
-}
-
-function groupClassesBySubject(classes) {
-  if (groupedClassesCache[JSON.stringify(classes)]) {
-    return groupedClassesCache[JSON.stringify(classes)];
-  }
-
-  const grouped = classes.reduce((acc, cls) => {
-    if (!cls || !cls.subject) return acc;
-    if (!acc[cls.subject]) {
-      acc[cls.subject] = [];
-    }
-    acc[cls.subject].push(cls);
-    return acc;
-  }, {});
-
-  // প্রতিটি সাবজেক্টের ক্লাসগুলোকে টাইমস্ট্যাম্প অনুযায়ী সাজানো (নতুন থেকে পুরানো)
-  Object.keys(grouped).forEach(subject => {
-    grouped[subject].sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
-  });
-
-  groupedClassesCache[JSON.stringify(classes)] = grouped;
-  return grouped;
-}
-
-function renderTodayClassesSummary(classes) {
-  const container = $('#today-classes-body');
-  const sortValue = $('#sort-classes').value;
-
-  if (!classes || classes.length === 0) {
-    container.innerHTML = `<tr><td colspan="3" class="bangla-font" style="text-align: center; padding: 20px;">আজকের জন্য কোন ক্লাস পাওয়া যায়নি</td></tr>`;
-    return;
-  }
-
-  let tableHTML = '';
-  classes.forEach(cls => {
-    if (!cls) return;
-    const displayValue = sortValue === 'today' ? cls.time : cls.date;
-    tableHTML += `
-      <tr data-subject="${cls.subject}" data-timestamp="${cls.timestamp}">
-        <td><span class="subject-badge bangla-font">${cls.subject}</span></td>
-        <td class="class-info bangla-font">${cls.title}</td>
-        <td class="bangla-font">${displayValue}</td>
-      </tr>
-    `;
-  });
-  container.innerHTML = tableHTML;
-
-  $all('#today-classes-body tr').forEach(row => {
-    row.addEventListener('click', () => {
-      const subject = row.getAttribute('data-subject');
-      highlightedClassTimestamp = row.getAttribute('data-timestamp');
-      showSubjectPage(subject, true);
-    });
-  });
-}
-
-function renderCards(rows, root) {
-  if (!rows || rows.length === 0) {
-    root.innerHTML = '<div class="empty-state"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><p class="bangla-font">কোন ক্লাস পাওয়া যায়নি</p></div>';
-    return;
-  }
-
-  root.innerHTML = '';
-  rows.forEach(r => {
-    if (!r) return;
-
-    const specialFolders = ["ক্লাসের লেকচার শীট", "পরীক্ষার রেজাল্ট শীট", "অন্যান্য"];
-    let buttonText;
-    let isExpired = false;
-
-    if (specialFolders.includes(r.subject)) {
-      buttonText = "দেখুন";
-    } else if (r.subject === "মিশন") {
-      buttonText = "মিশন সম্পন্ন করুন";
-    } else if (r.subject === "ইক্সাম") {
-      buttonText = "পরীক্ষায় অংশগ্রহণ করুন";
-      isExpired = isExamTimeExpired(r.timestamp);
-    } else {
-      buttonText = "ক্লাস দেখুন";
     }
 
-    const card = document.createElement('div');
-    card.className = 'card fade-in';
-    card.setAttribute('data-timestamp', r.timestamp);
-    if (highlightedClassTimestamp === r.timestamp) {
-      card.classList.add('highlight');
-      setTimeout(() => {
-        card.classList.remove('highlight');
-        highlightedClassTimestamp = null;
-      }, 5000);
+    function renderCards(rows, root) {
+      if (!rows || rows.length === 0) {
+        root.innerHTML = '<div class="empty-state"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><p class="bangla-font">কোন ক্লাস পাওয়া যায়নি</p></div>';
+        return;
+      }
+
+      root.innerHTML = '';
+      rows.forEach(r => {
+        if (!r) return;
+
+        const specialFolders = ["ক্লাসের লেকচার শীট", "পরীক্ষার রেজাল্ট শীট", "সাজেশন্স"];
+        let buttonText;
+        let isExpired = false;
+
+        if (specialFolders.includes(r.subject)) {
+          buttonText = "দেখুন";
+        } else if (r.subject === "মিশন") {
+          buttonText = "মিশন সম্পন্ন করুন";
+        } else if (r.subject === "ইক্সাম") {
+          buttonText = "পরীক্ষায় অংশগ্রহণ করুন";
+          isExpired = isExamTimeExpired(r.timestamp);
+        } else {
+          buttonText = "ক্লাস দেখুন";
+        }
+
+        const card = document.createElement('div');
+        card.className = 'card fade-in';
+        card.setAttribute('data-timestamp', r.timestamp);
+        if (highlightedClassTimestamp === r.timestamp) {
+          card.classList.add('highlight');
+          setTimeout(() => {
+            card.classList.remove('highlight');
+            highlightedClassTimestamp = null;
+          }, 5000);
+        }
+        const idPrefix = r.type === 'mission' ? 'm' : r.type === 'exam' ? 'e' : 'c';
+        const trackId = idPrefix + r.globalId;
+        const onclickAttr = `onclick="trackItem('${trackId}', '${r.type}')"`
+        card.innerHTML = `
+          <span class="card-badge bangla-font">ক্লাস ${r.displaySerial}</span>
+          <div class="subject"><i class="fas fa-book"></i> <span class="bangla-font">${r.subject}</span></div>
+          <div class="video-title bangla-font">${r.title}</div>
+          <div class="time"><i class="fas fa-clock"></i> ${r.time} | <span class="bangla-font">${r.date}</span></div>
+          ${r.subject === "ইক্সাম" && isExpired ? '<div class="exam-expiry-notice bangla-font"><i class="fas fa-exclamation-triangle"></i> পরীক্ষায় অংশগ্রহণ করার নির্দিষ্ট সময় শেষ হয়ে গেছে</div>' : ''}
+          <a class="btn" target="_blank" rel="noopener" href="${r.link}" ${onclickAttr}><i class="fas fa-play-circle"></i> <span class="bangla-font">${buttonText}</span></a>
+        `;
+        root.appendChild(card);
+      });
     }
-    const idPrefix = r.type === 'mission' ? 'm' : r.type === 'exam' ? 'e' : 'c';
-    const trackId = idPrefix + r.globalId;
-    const onclickAttr = `onclick="trackItem('${trackId}', '${r.type}')"`
-    card.innerHTML = `
-      <span class="card-badge bangla-font">ক্লাস ${r.displaySerial}</span>
-      <div class="subject"><i class="fas fa-book"></i> <span class="bangla-font">${r.subject}</span></div>
-      <div class="video-title bangla-font">${r.title}</div>
-      <div class="time"><i class="fas fa-clock"></i> ${r.time} | <span class="bangla-font">${r.date}</span></div>
-      ${r.subject === "ইক্সাম" && isExpired ? '<div class="exam-expiry-notice bangla-font"><i class="fas fa-exclamation-triangle"></i> পরীক্ষায় অংশগ্রহণ করার নির্দিষ্ট সময় শেষ হয়ে গেছে</div>' : ''}
-      <a class="btn" target="_blank" rel="noopener" href="${r.link}" ${onclickAttr}><i class="fas fa-play-circle"></i> <span class="bangla-font">${buttonText}</span></a>
-    `;
-    root.appendChild(card);
-  });
-}
 
-function filterTodayClasses(classes) {
-  const today = getTodayDate();
-  return classes.filter(cls => cls && cls.date === today);
-}
-
-function similarity(s1, s2) {
-  s1 = s1.toLowerCase();
-  s2 = s2.toLowerCase();
-  const m = s1.length;
-  const n = s2.length;
-  const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
-  for (let i = 0; i <= m; i++) dp[i][0] = i;
-  for (let j = 0; j <= n; j++) dp[0][j] = j;
-  for (let i = 1; i <= m; i++) {
-    for (let j = 1; j <= n; j++) {
-      const cost = s1[i - 1] === s2[j - 1] ? 0 : 1;
-      dp[i][j] = Math.min(
-        dp[i - 1][j] + 1,
-        dp[i][j - 1] + 1,
-        dp[i - 1][j - 1] + cost
-      );
+    function filterTodayClasses(classes) {
+      const today = getTodayDate();
+      return classes.filter(cls => cls && cls.date === today);
     }
-  }
-  const distance = dp[m][n];
-  const maxLen = Math.max(m, n);
-  return maxLen ? (maxLen - distance) / maxLen : 0;
-}
 
-function maxWordSimilarity(searchTerm, title) {
-  const words = title.toLowerCase().split(/\s+/);
-  let maxSim = 0;
-  words.forEach(word => {
-    const sim = similarity(searchTerm, word);
-    if (sim > maxSim) maxSim = sim;
-  });
-  // Also check full title
-  const fullSim = similarity(searchTerm, title.toLowerCase());
-  return Math.max(maxSim, fullSim);
-}
+    function similarity(s1, s2) {
+      s1 = s1.toLowerCase();
+      s2 = s2.toLowerCase();
+      const m = s1.length;
+      const n = s2.length;
+      const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
+      for (let i = 0; i <= m; i++) dp[i][0] = i;
+      for (let j = 0; j <= n; j++) dp[0][j] = j;
+      for (let i = 1; i <= m; i++) {
+        for (let j = 1; j <= n; j++) {
+          const cost = s1[i - 1] === s2[j - 1] ? 0 : 1;
+          dp[i][j] = Math.min(
+            dp[i - 1][j] + 1,
+            dp[i][j - 1] + 1,
+            dp[i - 1][j - 1] + cost
+          );
+        }
+      }
+      const distance = dp[m][n];
+      const maxLen = Math.max(m, n);
+      return maxLen ? (maxLen - distance) / maxLen : 0;
+    }
 
-function renderSearchResults(results) {
-  const container = $('#search-results');
-  if (results.length === 0) {
-    container.style.display = 'none';
-    container.innerHTML = '';
-    return;
-  }
-  
-  container.style.display = 'flex';
-  container.innerHTML = '';
-  results.forEach(res => {
-    const item = document.createElement('div');
-    item.className = 'search-result-item';
-    item.innerHTML = `<span class="title bangla-font">${res.title}</span><span class="subject bangla-font">(${res.subject})</span>`;
-    item.addEventListener('click', () => {
-      highlightedClassTimestamp = res.timestamp;
-      showSubjectPage(res.subject, true);
+    function maxWordSimilarity(searchTerm, title) {
+      const words = title.toLowerCase().split(/\s+/);
+      let maxSim = 0;
+      words.forEach(word => {
+        const sim = similarity(searchTerm, word);
+        if (sim > maxSim) maxSim = sim;
+      });
+      // Also check full title
+      const fullSim = similarity(searchTerm, title.toLowerCase());
+      return Math.max(maxSim, fullSim);
+    }
+
+    function renderSearchResults(results) {
+      const container = $('#search-results');
+      if (results.length === 0) {
+        container.style.display = 'none';
+        container.innerHTML = '';
+        return;
+      }
+      
+      container.style.display = 'flex';
       container.innerHTML = '';
+      results.forEach(res => {
+        const item = document.createElement('div');
+        item.className = 'search-result-item';
+        item.innerHTML = `<span class="title bangla-font">${res.title}</span><span class="subject bangla-font">(${res.subject})</span>`;
+        item.addEventListener('click', () => {
+          highlightedClassTimestamp = res.timestamp;
+          showSubjectPage(res.subject, true);
+          container.innerHTML = '';
+          $('#search-subjects').value = '';
+          container.style.display = 'none';
+        });
+        container.appendChild(item);
+      });
+    }
+
+    async function loadInitialData() {
+      showLoadingOverlay(); // Show loading overlay
+      updateLoadingProgress(10);
+      if (!checkLoginExpiry()) {
+        logout();
+        return;
+      }
+
+      const rows = await fetchData();
+      updateLoadingProgress(95);
+      allClasses = normalizeRows(rows);
+      renderTodayClassesSummary(filterTodayClasses(allClasses));
+
+      showAddClassButton();
+      showDashboardButton();
+      
+      // Hide loading overlay after a short delay to ensure everything is loaded
+      setTimeout(() => {
+        hideLoadingOverlay();
+        updateLoadingProgress(0);
+      }, 100);
+    }
+
+    function showSubjectPage(subject, fromTable = false) {
+      currentSubject = subject;
+      mainScrollPosition = window.scrollY; // Save main page scroll position
+      history.pushState({ page: 'subject' }, ''); // Push state for back button
+      mainPage.style.display = 'none';
+      subjectPage.style.display = 'block';
+      $('#subject-title').innerHTML = `<i class="fas fa-book"></i> <span class="bangla-font">${subject}</span>`;
+      scrollToTop();
+
+      const classes = filterClassesByTimeRange('all');
+      const groupedClasses = groupClassesBySubject(classes);
+      const subjectClasses = groupedClasses[subject] || [];
+
+      const root = $('#classGrid');
+      renderCards(subjectClasses, root);
+
+      if (fromTable) {
+        const highlightedCard = $all('#classGrid .card').find(card => card.getAttribute('data-timestamp') === highlightedClassTimestamp);
+        if (highlightedCard) {
+          highlightedCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+
+      $('#search').value = '';
+    }
+
+    function returnToMainPage() {
+      subjectPage.style.display = 'none';
+      mainPage.style.display = 'block';
       $('#search-subjects').value = '';
-      container.style.display = 'none';
+      const pills = $all('.subject-link');
+      pills.forEach(pill => {
+        pill.style.display = 'flex';
+      });
+      window.scrollTo(0, mainScrollPosition); // Restore scroll position
+    }
+
+    function initializeEventListeners() {
+      $('#sort-classes').addEventListener('change', () => {
+        const range = $('#sort-classes').value;
+        const filteredClasses = filterClassesByTimeRange(range);
+        renderTodayClassesSummary(filteredClasses);
+      });
+
+      $('#search-subjects').addEventListener('input', () => {
+      const searchTerm = $('#search-subjects').value.trim().toLowerCase();
+      const resultsContainer = $('#search-results');
+      if (!searchTerm) {
+        resultsContainer.innerHTML = '';
+        resultsContainer.style.display = 'none';
+        return;
+      }
+      const filtered = allClasses
+        .map(cls => ({ ...cls, sim: maxWordSimilarity(searchTerm, cls.title) }))
+        .filter(res => res.sim > 0.3)
+        .sort((a, b) => b.sim - a.sim);
+      renderSearchResults(filtered);
     });
-    container.appendChild(item);
-  });
-}
 
-async function loadInitialData() {
-  showLoadingOverlay(); // Show loading overlay
-  updateLoadingProgress(10);
-  if (!checkLoginExpiry()) {
-    logout();
-    return;
-  }
+      $all('.subject-link').forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          const subject = link.getAttribute('data-name');
+          showSubjectPage(subject);
+        });
+      });
 
-  const rows = await fetchData();
-  updateLoadingProgress(95);
-  allClasses = normalizeRows(rows);
-  renderTodayClassesSummary(filterTodayClasses(allClasses));
+      $('#search').addEventListener('input', () => {
+        const searchTerm = $('#search').value.trim().toLowerCase();
+        const classes = filterClassesByTimeRange('all');
+        const groupedClasses = groupClassesBySubject(classes);
+        const subjectClasses = groupedClasses[currentSubject] || [];
+        const filteredClasses = subjectClasses.filter(cls => cls.title.toLowerCase().includes(searchTerm));
+        
+        const sortOrder = $('#sort').value;
+        if (sortOrder === 'asc') {
+          filteredClasses.sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
+        } else {
+          filteredClasses.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+        }
+        
+        renderCards(filteredClasses, $('#classGrid'));
+      });
 
-  showAddClassButton();
-  showDashboardButton();
-  
-  // Hide loading overlay after a short delay to ensure everything is loaded
-  setTimeout(() => {
-    hideLoadingOverlay();
-    updateLoadingProgress(0);
-  }, 100);
-}
+      $('#sort').addEventListener('change', () => {
+        const searchTerm = $('#search').value.trim().toLowerCase();
+        const classes = filterClassesByTimeRange('all');
+        const groupedClasses = groupClassesBySubject(classes);
+        const subjectClasses = groupedClasses[currentSubject] || [];
+        const filteredClasses = subjectClasses.filter(cls => cls.title.toLowerCase().includes(searchTerm));
+        
+        const sortOrder = $('#sort').value;
+        if (sortOrder === 'asc') {
+          filteredClasses.sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
+        } else {
+          filteredClasses.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+        }
+        
+        renderCards(filteredClasses, $('#classGrid'));
+      });
 
-function showSubjectPage(subject, fromTable = false) {
-  currentSubject = subject;
-  mainScrollPosition = window.scrollY; // Save main page scroll position
-  history.pushState({ page: 'subject' }, ''); // Push state for back button
-  mainPage.style.display = 'none';
-  subjectPage.style.display = 'block';
-  $('#subject-title').innerHTML = `<i class="fas fa-book"></i> <span class="bangla-font">${subject}</span>`;
-  scrollToTop();
+      $('.back-button').addEventListener('click', e => {
+        e.preventDefault();
+        history.back(); // Use history back instead of direct hide/show
+      });
 
-  const classes = filterClassesByTimeRange('all');
-  const groupedClasses = groupClassesBySubject(classes);
-  const subjectClasses = groupedClasses[subject] || [];
+      window.addEventListener('popstate', (event) => {
+        if (event.state && event.state.page === 'subject') {
+          showSubjectPage(currentSubject); // If popping to subject page
+        } else {
+          returnToMainPage(); // Back to main page
+        }
+      });
 
-  const root = $('#classGrid');
-  renderCards(subjectClasses, root);
-
-  if (fromTable) {
-    const highlightedCard = $all('#classGrid .card').find(card => card.getAttribute('data-timestamp') === highlightedClassTimestamp);
-    if (highlightedCard) {
-      highlightedCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      $('#refresh-data-btn').addEventListener('click', async () => {
+        showLoadingOverlay();
+        updateLoadingProgress(10);
+        const rows = await fetchData();
+        allClasses = normalizeRows(rows);
+        groupedClassesCache = {};
+        renderTodayClassesSummary(filterClassesByTimeRange($('#sort-classes').value));
+        
+        if (subjectPage.style.display === 'block' && currentSubject) {
+          showSubjectPage(currentSubject);
+        }
+        
+        hideLoadingOverlay();
+        showNotification("ডেটা রিফ্রেশ হয়েছে!");
+      });
     }
-  }
 
-  $('#search').value = '';
-}
+    /* Dashboard Script */
+    const motivationalQuotes = [
+      "প্রতিদিনের ক্লাস প্রতিদিন করুন, সাফল্য আপনার কাছে আসবে! 🌟",
+      "ছোট ছোট পদক্ষেপই বড় সাফল্যের পথ তৈরি করে! 💪",
+      "নিয়মিত পড়াশোনা আপনাকে লক্ষ্যের কাছে নিয়ে যাবে! 🚀",
+      "প্রতিটি ক্লাস আপনাকে এক ধাপ এগিয়ে নেয়! 🏆"
+    ];
 
-function returnToMainPage() {
-  subjectPage.style.display = 'none';
-  mainPage.style.display = 'block';
-  $('#search-subjects').value = '';
-  const pills = $all('.subject-link');
-  pills.forEach(pill => {
-    pill.style.display = 'flex';
-  });
-  window.scrollTo(0, mainScrollPosition); // Restore scroll position
-}
+    const badges = [
+      { name: 'Starter', threshold: 0, class: 'badge-starter', icon: '🏁' },
+      { name: 'Bronze Cup', threshold: 30, class: 'badge-bronze', icon: '🥉' },
+      { name: 'Silver Cup', threshold: 50, class: 'badge-silver', icon: '🥈' },
+      { name: 'Gold Cup', threshold: 65, class: 'badge-gold', icon: '🥇' },
+      { name: 'Platinum Trophy', threshold: 80, class: 'badge-platinum', icon: '🏆' }
+    ];
 
-function initializeEventListeners() {
-  $('#sort-classes').addEventListener('change', () => {
-    const range = $('#sort-classes').value;
-    const filteredClasses = filterClassesByTimeRange(range);
-    renderTodayClassesSummary(filteredClasses);
-  });
-
-  $('#search-subjects').addEventListener('input', () => {
-  const searchTerm = $('#search-subjects').value.trim().toLowerCase();
-  const resultsContainer = $('#search-results');
-  if (!searchTerm) {
-    resultsContainer.innerHTML = '';
-    resultsContainer.style.display = 'none';
-    return;
-  }
-  const filtered = allClasses
-    .map(cls => ({ ...cls, sim: maxWordSimilarity(searchTerm, cls.title) }))
-    .filter(res => res.sim > 0.3)
-    .sort((a, b) => b.sim - a.sim);
-  renderSearchResults(filtered);
-});
-
-  $all('.subject-link').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const subject = link.getAttribute('data-name');
-      showSubjectPage(subject);
-    });
-  });
-
-  $('#search').addEventListener('input', () => {
-    const searchTerm = $('#search').value.trim().toLowerCase();
-    const classes = filterClassesByTimeRange('all');
-    const groupedClasses = groupClassesBySubject(classes);
-    const subjectClasses = groupedClasses[currentSubject] || [];
-    const filteredClasses = subjectClasses.filter(cls => cls.title.toLowerCase().includes(searchTerm));
-    
-    const sortOrder = $('#sort').value;
-    if (sortOrder === 'asc') {
-      filteredClasses.sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
-    } else {
-      filteredClasses.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+    function parseDate(dateStr) {
+      if (!dateStr) return new Date(0);
+      const [day, month, year] = dateStr.split('-').map(Number);
+      return new Date(year, month - 1, day);
     }
-    
-    renderCards(filteredClasses, $('#classGrid'));
-  });
 
-  $('#sort').addEventListener('change', () => {
-    const searchTerm = $('#search').value.trim().toLowerCase();
-    const classes = filterClassesByTimeRange('all');
-    const groupedClasses = groupClassesBySubject(classes);
-    const subjectClasses = groupedClasses[currentSubject] || [];
-    const filteredClasses = subjectClasses.filter(cls => cls.title.toLowerCase().includes(searchTerm));
-    
-    const sortOrder = $('#sort').value;
-    if (sortOrder === 'asc') {
-      filteredClasses.sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
-    } else {
-      filteredClasses.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+    function saveStudentData(name, joinDate, lastLogin, lastActivity, completedItems) {
+      localStorage.setItem(DASHBOARD_STORAGE_KEYS.STUDENT_NAME, name || 'শিক্ষার্থী');
+      localStorage.setItem(DASHBOARD_STORAGE_KEYS.JOIN_DATE, joinDate || getTodayDate());
+      localStorage.setItem(DASHBOARD_STORAGE_KEYS.LAST_LOGIN, lastLogin || new Date().toISOString());
+      localStorage.setItem(DASHBOARD_STORAGE_KEYS.LAST_ACTIVITY, lastActivity || new Date().toISOString());
+      localStorage.setItem(DASHBOARD_STORAGE_KEYS.COMPLETED_ITEMS, JSON.stringify(completedItems || []));
     }
-    
-    renderCards(filteredClasses, $('#classGrid'));
-  });
 
-  $('.back-button').addEventListener('click', e => {
-    e.preventDefault();
-    history.back(); // Use history back instead of direct hide/show
-  });
-
-  window.addEventListener('popstate', (event) => {
-    if (event.state && event.state.page === 'subject') {
-      showSubjectPage(currentSubject); // If popping to subject page
-    } else {
-      returnToMainPage(); // Back to main page
+    function getStudentData() {
+      return {
+        name: localStorage.getItem(DASHBOARD_STORAGE_KEYS.STUDENT_NAME) || 'শিক্ষার্থী',
+        joinDate: localStorage.getItem(DASHBOARD_STORAGE_KEYS.JOIN_DATE) || getTodayDate(),
+        lastLogin: localStorage.getItem(DASHBOARD_STORAGE_KEYS.LAST_LOGIN) || new Date().toISOString(),
+        lastActivity: localStorage.getItem(DASHBOARD_STORAGE_KEYS.LAST_ACTIVITY) || new Date().toISOString(),
+        completedItems: JSON.parse(localStorage.getItem(DASHBOARD_STORAGE_KEYS.COMPLETED_ITEMS)) || []
+      };
     }
-  });
 
-  $('#refresh-data-btn').addEventListener('click', async () => {
-    showLoadingOverlay();
-    updateLoadingProgress(10);
-    const rows = await fetchData();
-    allClasses = normalizeRows(rows);
-    groupedClassesCache = {};
-    renderTodayClassesSummary(filterClassesByTimeRange($('#sort-classes').value));
-    
-    if (subjectPage.style.display === 'block' && currentSubject) {
-      showSubjectPage(currentSubject);
-    }
-    
-    hideLoadingOverlay();
-    showNotification("ডেটা রিফ্রেশ হয়েছে!");
-  });
-}
+    // Tracking function
+    window.trackItem = function(id, type) {
+      const studentData = getStudentData();
+      let completed = studentData.completedItems;
+      if (completed.includes(id)) {
+        return; // Already completed
+      }
 
-/* Dashboard Script */
-const motivationalQuotes = [
-  "প্রতিদিনের ক্লাস প্রতিদিন করুন, সাফল্য আপনার কাছে আসবে! 🌟",
-  "ছোট ছোট পদক্ষেপই বড় সাফল্যের পথ তৈরি করে! 💪",
-  "নিয়মিত পড়াশোনা আপনাকে লক্ষ্যের কাছে নিয়ে যাবে! 🚀",
-  "প্রতিটি ক্লাস আপনাকে এক ধাপ এগিয়ে নেয়! 🏆"
-];
+      if (type === 'class') {
+        let scrolled = false;
+        const scrollListener = () => { scrolled = true; };
+        window.addEventListener('scroll', scrollListener);
 
-const badges = [
-  { name: 'Starter', threshold: 0, class: 'badge-starter', icon: '🏁' },
-  { name: 'Bronze Cup', threshold: 30, class: 'badge-bronze', icon: '🥉' },
-  { name: 'Silver Cup', threshold: 50, class: 'badge-silver', icon: '🥈' },
-  { name: 'Gold Cup', threshold: 65, class: 'badge-gold', icon: '🥇' },
-  { name: 'Platinum Trophy', threshold: 80, class: 'badge-platinum', icon: '🏆' }
-];
+        const minTime = 0; // seconds
+        const maxTime = 0; // 7 minutes in seconds
+        const randomTime = Math.random() * (maxTime - minTime) + minTime;
 
-function parseDate(dateStr) {
-  if (!dateStr) return new Date(0);
-  const [day, month, year] = dateStr.split('-').map(Number);
-  return new Date(year, month - 1, day);
-}
-
-function saveStudentData(name, joinDate, lastLogin, lastActivity, completedItems) {
-  localStorage.setItem(DASHBOARD_STORAGE_KEYS.STUDENT_NAME, name || 'শিক্ষার্থী');
-  localStorage.setItem(DASHBOARD_STORAGE_KEYS.JOIN_DATE, joinDate || getTodayDate());
-  localStorage.setItem(DASHBOARD_STORAGE_KEYS.LAST_LOGIN, lastLogin || new Date().toISOString());
-  localStorage.setItem(DASHBOARD_STORAGE_KEYS.LAST_ACTIVITY, lastActivity || new Date().toISOString());
-  localStorage.setItem(DASHBOARD_STORAGE_KEYS.COMPLETED_ITEMS, JSON.stringify(completedItems || []));
-}
-
-function getStudentData() {
-  return {
-    name: localStorage.getItem(DASHBOARD_STORAGE_KEYS.STUDENT_NAME) || 'শিক্ষার্থী',
-    joinDate: localStorage.getItem(DASHBOARD_STORAGE_KEYS.JOIN_DATE) || getTodayDate(),
-    lastLogin: localStorage.getItem(DASHBOARD_STORAGE_KEYS.LAST_LOGIN) || new Date().toISOString(),
-    lastActivity: localStorage.getItem(DASHBOARD_STORAGE_KEYS.LAST_ACTIVITY) || new Date().toISOString(),
-    completedItems: JSON.parse(localStorage.getItem(DASHBOARD_STORAGE_KEYS.COMPLETED_ITEMS)) || []
-  };
-}
-
-// Tracking function
-window.trackItem = function(id, type) {
-  const studentData = getStudentData();
-  let completed = studentData.completedItems;
-  if (completed.includes(id)) {
-    return; // Already completed
-  }
-
-  if (type === 'class') {
-    let scrolled = false;
-    const scrollListener = () => { scrolled = true; };
-    window.addEventListener('scroll', scrollListener);
-
-    const minTime = 0; // seconds
-    const maxTime = 0; // 7 minutes in seconds
-    const randomTime = Math.random() * (maxTime - minTime) + minTime;
-
-    setTimeout(() => {
-      window.removeEventListener('scroll', scrollListener);
-      if (!scrolled) {
+        setTimeout(() => {
+          window.removeEventListener('scroll', scrollListener);
+          if (!scrolled) {
+            completed.push(id);
+            saveStudentData(studentData.name, studentData.joinDate, new Date().toISOString(), new Date().toISOString(), completed);
+            showNotification(`${type} সম্পন্ন হয়েছে!`, false);
+          } else {
+            showNotification('পেজ স্ক্রল হয়েছে, সম্পন্ন মনে করা হয়নি।', true);
+          }
+        }, randomTime * 1000);
+      } else {
+        // For missions and exams, complete immediately
         completed.push(id);
         saveStudentData(studentData.name, studentData.joinDate, new Date().toISOString(), new Date().toISOString(), completed);
         showNotification(`${type} সম্পন্ন হয়েছে!`, false);
-      } else {
-        showNotification('পেজ স্ক্রল হয়েছে, সম্পন্ন মনে করা হয়নি।', true);
       }
-    }, randomTime * 1000);
-  } else {
-    // For missions and exams, complete immediately
-    completed.push(id);
-    saveStudentData(studentData.name, studentData.joinDate, new Date().toISOString(), new Date().toISOString(), completed);
-    showNotification(`${type} সম্পন্ন হয়েছে!`, false);
-  }
-};
+    };
 
-function getItemsFromAllClasses() {
-  const items = {
-    classes: [],
-    missions: [],
-    exams: []
-  };
+    function getItemsFromAllClasses() {
+      const items = {
+        classes: [],
+        missions: [],
+        exams: []
+      };
 
-  allClasses.forEach(cls => {
-    const idPrefix = cls.type === 'mission' ? 'm' : cls.type === 'exam' ? 'e' : 'c';
-    const trackId = idPrefix + cls.globalId;
-    const item = { id: trackId, addDate: cls.date };
-    if (cls.type === 'mission') {
-      items.missions.push(item);
-    } else if (cls.type === 'exam') {
-      items.exams.push(item);
-    } else {
-      items.classes.push(item);
+      allClasses.forEach(cls => {
+        const idPrefix = cls.type === 'mission' ? 'm' : cls.type === 'exam' ? 'e' : 'c';
+        const trackId = idPrefix + cls.globalId;
+        const item = { id: trackId, addDate: cls.date };
+        if (cls.type === 'mission') {
+          items.missions.push(item);
+        } else if (cls.type === 'exam') {
+          items.exams.push(item);
+        } else {
+          items.classes.push(item);
+        }
+      });
+
+      return items;
     }
-  });
 
-  return items;
-}
+    function calculateStats(joinDate, completed) {
+      const joinDateObj = parseDate(joinDate);
+      const items = getItemsFromAllClasses();
 
-function calculateStats(joinDate, completed) {
-  const joinDateObj = parseDate(joinDate);
-  const items = getItemsFromAllClasses();
-
-  function filterItems(itemList, isAfter) {
-    return itemList.filter(item => {
-      const addDateObj = parseDate(item.addDate);
-      return isAfter ? addDateObj >= joinDateObj : addDateObj < joinDateObj;
-    });
-  }
-
-  const afterClasses = filterItems(items.classes, true);
-  const beforeClasses = filterItems(items.classes, false);
-  const afterMissions = filterItems(items.missions, true);
-  const beforeMissions = filterItems(items.missions, false);
-  const afterExams = filterItems(items.exams, true);
-  const beforeExams = filterItems(items.exams, false);
-
-  const doneAfterClasses = afterClasses.filter(item => completed.includes(item.id)).length;
-  const doneBeforeClasses = beforeClasses.filter(item => completed.includes(item.id)).length;
-  const doneAfterMissions = afterMissions.filter(item => completed.includes(item.id)).length;
-  const doneBeforeMissions = beforeMissions.filter(item => completed.includes(item.id)).length;
-  const doneAfterExams = afterExams.filter(item => completed.includes(item.id)).length;
-  const doneBeforeExams = beforeExams.filter(item => completed.includes(item.id)).length;
-
-  const totalAll = items.classes.length + items.missions.length + items.exams.length;
-  const totalCompleted = completed.length;
-  const progress = totalAll > 0 ? (totalCompleted / totalAll) * 100 : 0;
-
-  return {
-    after: {
-      totalClasses: afterClasses.length,
-      doneClasses: doneAfterClasses,
-      pendingClasses: afterClasses.length - doneAfterClasses,
-      totalMissions: afterMissions.length,
-      doneMissions: doneAfterMissions,
-      pendingMissions: afterMissions.length - doneAfterMissions,
-      totalExams: afterExams.length,
-      doneExams: doneAfterExams,
-      pendingExams: afterExams.length - doneAfterExams
-    },
-    before: {
-      totalClasses: beforeClasses.length,
-      doneClasses: doneBeforeClasses,
-      pendingClasses: beforeClasses.length - doneBeforeClasses,
-      totalMissions: beforeMissions.length,
-      doneMissions: doneBeforeMissions,
-      pendingMissions: beforeMissions.length - doneBeforeMissions,
-      totalExams: beforeExams.length,
-      doneExams: doneBeforeExams,
-      pendingExams: beforeExams.length - doneBeforeExams
-    },
-    progress: progress.toFixed(1)
-  };
-}
-
-function getCurrentBadge(progress) {
-  for (let i = badges.length - 1; i >= 0; i--) {
-    if (progress >= badges[i].threshold) {
-      return badges[i];
-    }
-  }
-  return badges[0];
-}
-
-function saveNotes(notes) {
-  localStorage.setItem(DASHBOARD_STORAGE_KEYS.NOTES, JSON.stringify(notes));
-}
-
-function getNotes() {
-  return JSON.parse(localStorage.getItem(DASHBOARD_STORAGE_KEYS.NOTES)) || [];
-}
-
-function renderNotes() {
-  const notesList = $('#notes-list');
-  const notes = getNotes();
-  notesList.innerHTML = '';
-  notes.forEach((note, index) => {
-    const li = document.createElement('li');
-    li.innerHTML = `
-      <span>${note}</span>
-      <button onclick="deleteNote(${index})">মুছে ফেলুন</button>
-    `;
-    notesList.appendChild(li);
-  });
-}
-
-window.deleteNote = function(index) {
-  let notes = getNotes();
-  notes.splice(index, 1);
-  saveNotes(notes);
-  renderNotes();
-};
-
-function showDashboard() {
-  const studentData = getStudentData();
-  const isNewUser = !localStorage.getItem(DASHBOARD_STORAGE_KEYS.STUDENT_NAME);
-  const randomQuote = motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)];
-  const stats = calculateStats(studentData.joinDate, studentData.completedItems);
-  const currentBadge = getCurrentBadge(stats.progress);
-  const lastActivityDate = new Date(studentData.lastActivity);
-  const daysSinceActivity = (new Date() - lastActivityDate) / (1000 * 60 * 60 * 24);
-
-  const dashboardBody = $('#dashboard-body');
-  dashboardBody.innerHTML = `
-    ${isNewUser ? `
-      <div class="alert-box success bangla-font">
-        <i class="fas fa-info-circle"></i> আপনার নাম লিখুন এবং ড্যাশবোর্ড কাস্টমাইজ করুন!
-      </div>
-      <form class="name-input-form">
-        <input type="text" id="student-name-input" placeholder="আপনার নাম লিখুন" class="bangla-font">
-        <button type="submit" class="bangla-font">নাম সংরক্ষণ করুন</button>
-      </form>
-    ` : `
-      <header class="modal-header bangla-font">
-        <h2>স্বাগতম, ${studentData.name}!</h2>
-        <div class="badge-current ${currentBadge.class}" id="current-badge">${currentBadge.icon} ${currentBadge.name}</div>
-        <div id="close-btn" class="close-btn">✕</div>
-      </header>
-
-      <section class="motivation">
-        <p id="motivation-text" class="bangla-font">${randomQuote}</p>
-      </section>
-
-      <section class="stats after-join bangla-font">
-        <h2>জয়েন-এর পর</h2>
-        <table class="stats-table">
-          <thead>
-            <tr>
-              <th>আইটেম</th>
-              <th>মোট</th>
-              <th>সম্পন্ন</th>
-              <th>বাকি</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>ক্লাস</td>
-              <td class="total">${stats.after.totalClasses}</td>
-              <td class="done">${stats.after.doneClasses}</td>
-              <td class="pending">${stats.after.pendingClasses}</td>
-            </tr>
-            <tr>
-              <td>মিশন</td>
-              <td class="total">${stats.after.totalMissions}</td>
-              <td class="done">${stats.after.doneMissions}</td>
-              <td class="pending">${stats.after.pendingMissions}</td>
-            </tr>
-            <tr>
-              <td>পরীক্ষা</td>
-              <td class="total">${stats.after.totalExams}</td>
-              <td class="done">${stats.after.doneExams}</td>
-              <td class="pending">${stats.after.pendingExams}</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <section class="stats before-join bangla-font">
-        <h2>জয়েন-এর আগে</h2>
-        <table class="stats-table">
-          <thead>
-            <tr>
-              <th>আইটেম</th>
-              <th>মোট</th>
-              <th>সম্পন্ন</th>
-              <th>বাকি</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>ক্লাস</td>
-              <td class="total">${stats.before.totalClasses}</td>
-              <td class="done">${stats.before.doneClasses}</td>
-              <td class="pending">${stats.before.pendingClasses}</td>
-            </tr>
-            <tr>
-              <td>মিশন</td>
-              <td class="total">${stats.before.totalMissions}</td>
-              <td class="done">${stats.before.doneMissions}</td>
-              <td class="pending">${stats.before.pendingMissions}</td>
-            </tr>
-            <tr>
-              <td>পরীক্ষা</td>
-              <td class="total">${stats.before.totalExams}</td>
-              <td class="done">${stats.before.doneExams}</td>
-              <td class="pending">${stats.before.pendingExams}</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <section id="alarms" class="alarms bangla-font"></section>
-
-      <section class="progress-section bangla-font">
-        <h3>সম্মক অগ্রগতি</h3>
-        <div class="progress-bar">
-          <div class="progress-bar-fill" style="width: ${stats.progress}%"></div>
-        </div>
-        <p>${stats.progress}%</p>
-      </section>
-
-      <div class="badges-dropdown bangla-font">
-        <label for="badges-select">ব্যাজসমূহ:</label>
-        <select id="badges-select">
-          ${badges.map(badge => `
-            <option ${stats.progress >= badge.threshold ? '' : 'disabled'}>${badge.icon} ${badge.name} ${stats.progress >= badge.threshold ? '(প্রাপ্ত)' : '(লক)'}</option>
-          `).join('')}
-        </select>
-      </div>
-
-      <section class="notes-section bangla-font">
-        <h3>আমার নোটস</h3>
-        <textarea id="note-input" placeholder="নতুন নোট লিখুন..."></textarea>
-        <button id="add-note-btn">নোট যোগ করুন</button>
-        <ul id="notes-list"></ul>
-      </section>
-    `}
-  `;
-
-  if (isNewUser) {
-    const form = dashboardBody.querySelector('.name-input-form');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const nameInput = $('#student-name-input').value.trim();
-      if (nameInput) {
-        saveStudentData(nameInput, getTodayDate(), new Date().toISOString(), new Date().toISOString(), []);
-        showNotification('নাম সফলভাবে সংরক্ষিত হয়েছে!', false);
-        showDashboard();
-      } else {
-        showNotification('অনুগ্রহ করে একটি বৈধ নাম লিখুন', true);
+      function filterItems(itemList, isAfter) {
+        return itemList.filter(item => {
+          const addDateObj = parseDate(item.addDate);
+          return isAfter ? addDateObj >= joinDateObj : addDateObj < joinDateObj;
+        });
       }
-    });
-  } else {
-    // Update last login
-    localStorage.setItem(DASHBOARD_STORAGE_KEYS.LAST_LOGIN, new Date().toISOString());
 
-    // Alarms
-    const alarms = $('#alarms');
-    if (stats.before.pendingClasses + stats.before.pendingMissions + stats.before.pendingExams > 0) {
-      alarms.innerHTML += `<div class="alert-box warning"><i class="fas fa-exclamation-triangle"></i> জয়েনের আগের ক্লাস, মিশন এবং পরীক্ষাগুলো নিজ দায়িত্বে সম্পন্ন করুন যতক্ষণ না সবগুলো শেষ হয়।</div>`;
-    }
-    if (daysSinceActivity > 7) {
-      alarms.innerHTML += `<div class="alert-box warning"><i class="fas fa-exclamation-triangle"></i> আপনি টানা ১ সপ্তাহের বেশি ক্লাস করেননি! আজকের ক্লাস বক্সে গিয়ে সপ্তাহের ক্লাস সিলেক্ট করে প্রতিটা ক্লাস করে নিন।</div>`;
-    }
-    if (daysSinceActivity > 30) {
-      alarms.innerHTML += `<div class="alert-box warning"><i class="fas fa-exclamation-triangle"></i> আপনি টানা ১ মাসের বেশি ক্লাস করেননি! আজকের ক্লাস বক্সে গিয়ে মাসের ক্লাস সিলেক্ট করে প্রতিটা ক্লাস করে নিন।</div>`;
-    }
-    if (stats.progress < 10 && !isNewUser) {
-      alarms.innerHTML += `<div class="alert-box warning"><i class="fas fa-exclamation-triangle"></i> আপনার অগ্রগতি খুব কম! নিয়মিত ক্লাস করে অগ্রসর হোন।</div>`;
-    }
-    if (stats.after.pendingClasses > 5) {
-      alarms.innerHTML += `<div class="alert-box warning"><i class="fas fa-exclamation-triangle"></i> জয়েনের পরের ক্লাসগুলোতে অনেক বাকি! দ্রুত সম্পন্ন করুন।</div>`;
+      const afterClasses = filterItems(items.classes, true);
+      const beforeClasses = filterItems(items.classes, false);
+      const afterMissions = filterItems(items.missions, true);
+      const beforeMissions = filterItems(items.missions, false);
+      const afterExams = filterItems(items.exams, true);
+      const beforeExams = filterItems(items.exams, false);
+
+      const doneAfterClasses = afterClasses.filter(item => completed.includes(item.id)).length;
+      const doneBeforeClasses = beforeClasses.filter(item => completed.includes(item.id)).length;
+      const doneAfterMissions = afterMissions.filter(item => completed.includes(item.id)).length;
+      const doneBeforeMissions = beforeMissions.filter(item => completed.includes(item.id)).length;
+      const doneAfterExams = afterExams.filter(item => completed.includes(item.id)).length;
+      const doneBeforeExams = beforeExams.filter(item => completed.includes(item.id)).length;
+
+      const totalAll = items.classes.length + items.missions.length + items.exams.length;
+      const totalCompleted = completed.length;
+      const progress = totalAll > 0 ? (totalCompleted / totalAll) * 100 : 0;
+
+      return {
+        after: {
+          totalClasses: afterClasses.length,
+          doneClasses: doneAfterClasses,
+          pendingClasses: afterClasses.length - doneAfterClasses,
+          totalMissions: afterMissions.length,
+          doneMissions: doneAfterMissions,
+          pendingMissions: afterMissions.length - doneAfterMissions,
+          totalExams: afterExams.length,
+          doneExams: doneAfterExams,
+          pendingExams: afterExams.length - doneAfterExams
+        },
+        before: {
+          totalClasses: beforeClasses.length,
+          doneClasses: doneBeforeClasses,
+          pendingClasses: beforeClasses.length - doneBeforeClasses,
+          totalMissions: beforeMissions.length,
+          doneMissions: doneBeforeMissions,
+          pendingMissions: beforeMissions.length - doneBeforeMissions,
+          totalExams: beforeExams.length,
+          doneExams: doneBeforeExams,
+          pendingExams: beforeExams.length - doneBeforeExams
+        },
+        progress: progress.toFixed(1)
+      };
     }
 
-    // Close button
-    const closeBtn = $('#close-btn');
-    closeBtn.addEventListener('click', () => {
-      const dashboardModal = $('#dashboard-modal');
-      dashboardModal.classList.remove('show');
-    });
+    function getCurrentBadge(progress) {
+      for (let i = badges.length - 1; i >= 0; i--) {
+        if (progress >= badges[i].threshold) {
+          return badges[i];
+        }
+      }
+      return badges[0];
+    }
 
-    // Notes functionality
-    renderNotes();
-    const addNoteBtn = $('#add-note-btn');
-    addNoteBtn.addEventListener('click', () => {
-      const noteInput = $('#note-input');
-      const noteText = noteInput.value.trim();
-      if (noteText) {
-        let notes = getNotes();
-        notes.push(noteText);
-        saveNotes(notes);
+    function saveNotes(notes) {
+      localStorage.setItem(DASHBOARD_STORAGE_KEYS.NOTES, JSON.stringify(notes));
+    }
+
+    function getNotes() {
+      return JSON.parse(localStorage.getItem(DASHBOARD_STORAGE_KEYS.NOTES)) || [];
+    }
+
+    function renderNotes() {
+      const notesList = $('#notes-list');
+      const notes = getNotes();
+      notesList.innerHTML = '';
+      notes.forEach((note, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <span>${note}</span>
+          <button onclick="deleteNote(${index})">মুছে ফেলুন</button>
+        `;
+        notesList.appendChild(li);
+      });
+    }
+
+    window.deleteNote = function(index) {
+      let notes = getNotes();
+      notes.splice(index, 1);
+      saveNotes(notes);
+      renderNotes();
+    };
+
+    function showDashboard() {
+      const studentData = getStudentData();
+      const isNewUser = !localStorage.getItem(DASHBOARD_STORAGE_KEYS.STUDENT_NAME);
+      const randomQuote = motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)];
+      const stats = calculateStats(studentData.joinDate, studentData.completedItems);
+      const currentBadge = getCurrentBadge(stats.progress);
+      const lastActivityDate = new Date(studentData.lastActivity);
+      const daysSinceActivity = (new Date() - lastActivityDate) / (1000 * 60 * 60 * 24);
+
+      const dashboardBody = $('#dashboard-body');
+      dashboardBody.innerHTML = `
+        ${isNewUser ? `
+          <div class="alert-box success bangla-font">
+            <i class="fas fa-info-circle"></i> আপনার নাম লিখুন এবং ড্যাশবোর্ড কাস্টমাইজ করুন!
+          </div>
+          <form class="name-input-form">
+            <input type="text" id="student-name-input" placeholder="আপনার নাম লিখুন" class="bangla-font">
+            <button type="submit" class="bangla-font">নাম সংরক্ষণ করুন</button>
+          </form>
+        ` : `
+          <header class="modal-header bangla-font">
+            <h2>স্বাগতম, ${studentData.name}!</h2>
+            <div class="badge-current ${currentBadge.class}" id="current-badge">${currentBadge.icon} ${currentBadge.name}</div>
+            <div id="close-btn" class="close-btn">✕</div>
+          </header>
+
+          <section class="motivation">
+            <p id="motivation-text" class="bangla-font">${randomQuote}</p>
+          </section>
+
+          <section class="stats after-join bangla-font">
+            <h2>জয়েন-এর পর</h2>
+            <table class="stats-table">
+              <thead>
+                <tr>
+                  <th>আইটেম</th>
+                  <th>মোট</th>
+                  <th>সম্পন্ন</th>
+                  <th>বাকি</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ক্লাস</td>
+                  <td class="total">${stats.after.totalClasses}</td>
+                  <td class="done">${stats.after.doneClasses}</td>
+                  <td class="pending">${stats.after.pendingClasses}</td>
+                </tr>
+                <tr>
+                  <td>মিশন</td>
+                  <td class="total">${stats.after.totalMissions}</td>
+                  <td class="done">${stats.after.doneMissions}</td>
+                  <td class="pending">${stats.after.pendingMissions}</td>
+                </tr>
+                <tr>
+                  <td>পরীক্ষা</td>
+                  <td class="total">${stats.after.totalExams}</td>
+                  <td class="done">${stats.after.doneExams}</td>
+                  <td class="pending">${stats.after.pendingExams}</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section class="stats before-join bangla-font">
+            <h2>জয়েন-এর আগে</h2>
+            <table class="stats-table">
+              <thead>
+                <tr>
+                  <th>আইটেম</th>
+                  <th>মোট</th>
+                  <th>সম্পন্ন</th>
+                  <th>বাকি</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ক্লাস</td>
+                  <td class="total">${stats.before.totalClasses}</td>
+                  <td class="done">${stats.before.doneClasses}</td>
+                  <td class="pending">${stats.before.pendingClasses}</td>
+                </tr>
+                <tr>
+                  <td>মিশন</td>
+                  <td class="total">${stats.before.totalMissions}</td>
+                  <td class="done">${stats.before.doneMissions}</td>
+                  <td class="pending">${stats.before.pendingMissions}</td>
+                </tr>
+                <tr>
+                  <td>পরীক্ষা</td>
+                  <td class="total">${stats.before.totalExams}</td>
+                  <td class="done">${stats.before.doneExams}</td>
+                  <td class="pending">${stats.before.pendingExams}</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="alarms" class="alarms bangla-font"></section>
+
+          <section class="progress-section bangla-font">
+            <h3>সম্মক অগ্রগতি</h3>
+            <div class="progress-bar">
+              <div class="progress-bar-fill" style="width: ${stats.progress}%"></div>
+            </div>
+            <p>${stats.progress}%</p>
+          </section>
+
+          <div class="badges-dropdown bangla-font">
+            <label for="badges-select">ব্যাজসমূহ:</label>
+            <select id="badges-select">
+              ${badges.map(badge => `
+                <option ${stats.progress >= badge.threshold ? '' : 'disabled'}>${badge.icon} ${badge.name} ${stats.progress >= badge.threshold ? '(প্রাপ্ত)' : '(লক)'}</option>
+              `).join('')}
+            </select>
+          </div>
+
+          <section class="notes-section bangla-font">
+            <h3>আমার নোটস</h3>
+            <textarea id="note-input" placeholder="নতুন নোট লিখুন..."></textarea>
+            <button id="add-note-btn">নোট যোগ করুন</button>
+            <ul id="notes-list"></ul>
+          </section>
+        `}
+      `;
+
+      if (isNewUser) {
+        const form = dashboardBody.querySelector('.name-input-form');
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const nameInput = $('#student-name-input').value.trim();
+          if (nameInput) {
+            saveStudentData(nameInput, getTodayDate(), new Date().toISOString(), new Date().toISOString(), []);
+            showNotification('নাম সফলভাবে সংরক্ষিত হয়েছে!', false);
+            showDashboard();
+          } else {
+            showNotification('অনুগ্রহ করে একটি বৈধ নাম লিখুন', true);
+          }
+        });
+      } else {
+        // Update last login
+        localStorage.setItem(DASHBOARD_STORAGE_KEYS.LAST_LOGIN, new Date().toISOString());
+
+        // Alarms
+        const alarms = $('#alarms');
+        if (stats.before.pendingClasses + stats.before.pendingMissions + stats.before.pendingExams > 0) {
+          alarms.innerHTML += `<div class="alert-box warning"><i class="fas fa-exclamation-triangle"></i> জয়েনের আগের ক্লাস, মিশন এবং পরীক্ষাগুলো নিজ দায়িত্বে সম্পন্ন করুন যতক্ষণ না সবগুলো শেষ হয়।</div>`;
+        }
+        if (daysSinceActivity > 7) {
+          alarms.innerHTML += `<div class="alert-box warning"><i class="fas fa-exclamation-triangle"></i> আপনি টানা ১ সপ্তাহের বেশি ক্লাস করেননি! আজকের ক্লাস বক্সে গিয়ে সপ্তাহের ক্লাস সিলেক্ট করে প্রতিটা ক্লাস করে নিন।</div>`;
+        }
+        if (daysSinceActivity > 30) {
+          alarms.innerHTML += `<div class="alert-box warning"><i class="fas fa-exclamation-triangle"></i> আপনি টানা ১ মাসের বেশি ক্লাস করেননি! আজকের ক্লাস বক্সে গিয়ে মাসের ক্লাস সিলেক্ট করে প্রতিটা ক্লাস করে নিন।</div>`;
+        }
+        if (stats.progress < 10 && !isNewUser) {
+          alarms.innerHTML += `<div class="alert-box warning"><i class="fas fa-exclamation-triangle"></i> আপনার অগ্রগতি খুব কম! নিয়মিত ক্লাস করে অগ্রসর হোন।</div>`;
+        }
+        if (stats.after.pendingClasses > 5) {
+          alarms.innerHTML += `<div class="alert-box warning"><i class="fas fa-exclamation-triangle"></i> জয়েনের পরের ক্লাসগুলোতে অনেক বাকি! দ্রুত সম্পন্ন করুন।</div>`;
+        }
+
+        // Close button
+        const closeBtn = $('#close-btn');
+        closeBtn.addEventListener('click', () => {
+          const dashboardModal = $('#dashboard-modal');
+          dashboardModal.classList.remove('show');
+        });
+
+        // Notes functionality
         renderNotes();
-        noteInput.value = '';
-        showNotification('নোট যোগ করা হয়েছে!', false);
-      } else {
-        showNotification('অনুগ্রহ করে নোট লিখুন', true);
+        const addNoteBtn = $('#add-note-btn');
+        addNoteBtn.addEventListener('click', () => {
+          const noteInput = $('#note-input');
+          const noteText = noteInput.value.trim();
+          if (noteText) {
+            let notes = getNotes();
+            notes.push(noteText);
+            saveNotes(notes);
+            renderNotes();
+            noteInput.value = '';
+            showNotification('নোট যোগ করা হয়েছে!', false);
+          } else {
+            showNotification('অনুগ্রহ করে নোট লিখুন', true);
+          }
+        });
       }
+
+      const dashboardModal = $('#dashboard-modal');
+      dashboardModal.classList.add('show');
+    }
+
+    const dashboardBtn = $('#dashboard-btn');
+    dashboardBtn.addEventListener('click', () => {
+      showDashboard();
     });
-  }
 
-  const dashboardModal = $('#dashboard-modal');
-  dashboardModal.classList.add('show');
-}
+    // Slideshow functionality with pause on click
+    function initSlideshow() {
+      const images = [
+        'https://example.com/image1.jpg', // Replace with actual URLs
+        'https://example.com/image2.jpg',
+        'https://example.com/image3.jpg',
+        'https://example.com/image4.jpg'
+      ];
+      
+      const slideshowImages = document.querySelectorAll('.slideshow-image');
+      let currentIndex = 0;
+      let slideshowInterval;
+      let isPlaying = true;
+      
+      function showNextImage() {
+        slideshowImages.forEach((img, index) => {
+          img.classList.remove('active');
+          if (index === currentIndex) {
+            img.classList.add('active');
+          }
+        });
+        currentIndex = (currentIndex + 1) % images.length;
+      }
+      
+      function startSlideshow() {
+        if (slideshowInterval) clearInterval(slideshowInterval);
+        slideshowInterval = setInterval(showNextImage, 4000);
+        isPlaying = true;
+      }
+      
+      function stopSlideshow() {
+        clearInterval(slideshowInterval);
+        isPlaying = false;
+      }
+      
+      // Add click event to each image
+      slideshowImages.forEach(img => {
+        img.addEventListener('click', function() {
+          if (isPlaying) {
+            stopSlideshow();
+          } else {
+            startSlideshow();
+          }
+        });
+      });
+      
+      // Initial show and start
+      showNextImage();
+      startSlideshow();
+    }
 
-const dashboardBtn = $('#dashboard-btn');
-dashboardBtn.addEventListener('click', () => {
-  showDashboard();
-});
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzEX1EuBWpSMlZ9zbXs1lAVQkOTdeV779SsD6SF6RllQGMYxcHJu30p5BPzW7O-PAbysg/exec";
 
-document.addEventListener('DOMContentLoaded', () => {
+    function showNotification(message, isError=false){
+      const notification = $('#notification');
+      notification.innerHTML = `<i class="${isError?'fas fa-exclamation-circle':'fas fa-check-circle'}"></i> <span class="bangla-font">${message}</span>`;
+      notification.className=`notification ${isError?'error':'success'}`;
+      notification.classList.add('show');
+      setTimeout(()=>notification.classList.remove('show'),3000);
+    }
+
+    let storedName = localStorage.getItem('userName') || '';
+
+    function showNameModal(){ $('#nameModal').style.display='flex'; }
+    function hideNameModal(){ $('#nameModal').style.display='none'; }
+
+    function saveName(event){
+      event.preventDefault();
+      const name = $('#userName').value.trim();
+      if (name) {
+        localStorage.setItem('userName', name);
+        storedName = name;
+        hideNameModal();
+        showForm();
+      } else {
+        showNotification("নাম লিখুন!", true);
+      }
+    }
+
+    function handleFormClick() {
+      if (!storedName) {
+        showNameModal();
+      } else {
+        showForm();
+      }
+    }
+
+    function showForm(){ 
+      $('#formModal').style.display='flex'; 
+      $('#myForm').reset(); 
+      $('#name').value = storedName;
+    }
+
+    function hideForm(){ $('#formModal').style.display='none'; }
+
+    function showSubmissions(){ 
+      $('#submissionsModal').style.display='flex'; 
+      
+      // শুধু এই ১ লাইন যোগ করুন
+      $('#submissions-list').innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted)" class="bangla-font">লোড হচ্ছে...</div>';
+      
+      loadSubmissions(); 
+        }
+
+    function hideSubmissions(){ $('#submissionsModal').style.display='none'; }
+
+    function submitForm(event){
+      event.preventDefault();
+      const submitBtn = $('#submitBtn');
+      submitBtn.classList.add('loading');
+      submitBtn.disabled = true;
+      const form = $('#myForm');
+      const data = {
+        name: form.name.value.trim(),
+        batch: form.batch.value,
+        message: form.message.value.trim()
+      };
+
+      fetch(WEB_APP_URL,{
+        method:'POST',
+        body:JSON.stringify(data)
+      })
+      .then(res=>res.text())
+      .then(txt=>{
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
+        if(txt.startsWith("Success")){
+          form.reset(); hideForm(); showSuccessMessage();
+        }else {
+          showNotification("ডেটা জমা হয়নি! আবার চেষ্টা করুন।", true);
+        }
+      })
+      .catch(()=>{
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
+        showNotification("ডেটা জমা হয়নি! আবার চেষ্টা করুন।", true);
+      });
+    }
+
+    function showSuccessMessage(){
+      const successMessage = $('#successMessage');
+      successMessage.style.display='block';
+      setTimeout(()=>successMessage.style.display='none',3000);
+    }
+
+    function loadSubmissions() {
+      fetch(WEB_APP_URL + '?action=getSubmissions')
+        .then(res => res.json())
+        .then(data => {
+          const list = $('#submissions-list');
+          list.innerHTML = '';
+          
+          // শুধুমাত্র ALIM-27 ব্যাচ ফিল্টার করুন
+          const alim27Submissions = data.filter(item => 
+            item.batch && item.batch.toString().toLowerCase().includes('alim-27')
+          );
+          
+          // নতুন থেকে পুরানো সাজানো
+          alim27Submissions.sort((a, b) => new Date(b.timestamp || b.time) - new Date(a.timestamp || a.time));
+          
+          if (alim27Submissions.length === 0) {
+            list.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted)" class="bangla-font">ALIM-27 ব্যাচের কোন সাবমিশন নেই</div>';
+            return;
+          }
+          
+          alim27Submissions.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'submission-item';
+            div.innerHTML = `
+              <div class="submission-name bangla-font">${item.name}</div>
+              <div class="submission-batch bangla-font">ব্যাচ: ${item.batch}</div>
+              <div class="submission-message bangla-font">${item.message}</div>
+              ${item.reply ? `<div class="submission-reply bangla-font">উত্তর: ${item.reply}</div>` : ''}
+              <div class="submission-time bangla-font">${item.time}</div>
+            `;
+            list.appendChild(div);
+          });
+        })
+        .catch(() => showNotification("সাবমিশন লোড হয়নি! আবার চেষ্টা করুন।", true));
+        }
+    $('#form-button').addEventListener('click', handleFormClick);
+    $('#submissions-button').addEventListener('click',showSubmissions);
+    window.addEventListener('click',(e)=>{ 
+      if(e.target==$('#nameModal')) hideNameModal(); 
+      if(e.target==$('#formModal')) hideForm(); 
+      if(e.target==$('#submissionsModal')) hideSubmissions(); 
+    });
+
+    // Dynamic placeholder functionality
+    function initDynamicPlaceholder() {
+      const searchInput = $('#search-subjects');
+      const placeholders = [
+        'সার্চ করুন🔎',
+        'কি খুজছেন?🤔',
+        'সাজেশন্স🔥',
+        'জিন্স সাজেশন্স💥',
+        '👉ক্লাস',
+        '💡মিশন',
+        '👉ইক্সাম',
+        'শীট🗞',
+      ];
+      
+      let currentIndex = 0;
+      
+      // Function to update placeholder
+      function updatePlaceholder() {
+        searchInput.placeholder = placeholders[currentIndex];
+        currentIndex = (currentIndex + 1) % placeholders.length;
+      }
+      
+      // Update every 3 seconds
+      setInterval(updatePlaceholder, 4000);
+      
+      // Initialize with first placeholder
+      updatePlaceholder();
+    }
+
+    // Default page to main website transition
+function goToMainWebsite() {
+  defaultPage.style.display = 'none';
+  
   if (checkLoginExpiry()) {
-    loginPage.style.display = 'none';
     mainPage.style.display = 'block';
     loadInitialData();
     showAddClassButton();
     showDashboardButton();
   } else {
     loginPage.style.display = 'flex';
-    mainPage.style.display = 'none';
-    subjectPage.style.display = 'none';
   }
+}
+
+// Check if user has visited main website before
+document.addEventListener('DOMContentLoaded', () => {
+  // সবসময় ডিফল্ট পেজ দেখাবে
+  defaultPage.style.display = 'block';
+  loginPage.style.display = 'none';
+  mainPage.style.display = 'none';
+  subjectPage.style.display = 'none';
+  
   initializeEventListeners();
   
   // Initialize dynamic placeholder
@@ -3360,283 +4097,63 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initialize slideshow
   initSlideshow();
-});
-
-// Slideshow functionality
-function initSlideshow() {
-  const images = [
-    'https://example.com/image1.jpg', // Replace with actual URLs
-    'https://example.com/image2.jpg',
-    'https://example.com/image3.jpg',
-    'https://example.com/image4.jpg'
-  ];
   
-  const slideshowImages = document.querySelectorAll('.slideshow-image');
-  let currentIndex = 0;
-  
-  function showNextImage() {
-    slideshowImages.forEach((img, index) => {
-      img.classList.remove('active');
-      if (index === currentIndex) {
-        img.classList.add('active');
-      }
-    });
-    currentIndex = (currentIndex + 1) % images.length;
-  }
-  
-  // Initial show
-  showNextImage();
-  
-  // Change every 4 seconds
-  setInterval(showNextImage, 4000);
-}
-
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzEX1EuBWpSMlZ9zbXs1lAVQkOTdeV779SsD6SF6RllQGMYxcHJu30p5BPzW7O-PAbysg/exec";
-
-function showNotification(message, isError=false){
-  const notification = $('#notification');
-  notification.innerHTML = `<i class="${isError?'fas fa-exclamation-circle':'fas fa-check-circle'}"></i> <span class="bangla-font">${message}</span>`;
-  notification.className=`notification ${isError?'error':'success'}`;
-  notification.classList.add('show');
-  setTimeout(()=>notification.classList.remove('show'),3000);
-}
-
-let storedName = localStorage.getItem('userName') || '';
-
-function showNameModal(){ $('#nameModal').style.display='flex'; }
-function hideNameModal(){ $('#nameModal').style.display='none'; }
-
-function saveName(event){
-  event.preventDefault();
-  const name = $('#userName').value.trim();
-  if (name) {
-    localStorage.setItem('userName', name);
-    storedName = name;
-    hideNameModal();
-    showForm();
-  } else {
-    showNotification("নাম লিখুন!", true);
-  }
-}
-
-function handleFormClick() {
-  if (!storedName) {
-    showNameModal();
-  } else {
-    showForm();
-  }
-}
-
-function showForm(){ 
-  $('#formModal').style.display='flex'; 
-  $('#myForm').reset(); 
-  $('#name').value = storedName;
-}
-
-function hideForm(){ $('#formModal').style.display='none'; }
-
-function showSubmissions(){ 
-  $('#submissionsModal').style.display='flex'; 
-  
-  // শুধু এই ১ লাইন যোগ করুন
-  $('#submissions-list').innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted)" class="bangla-font">লোড হচ্ছে...</div>';
-  
-  loadSubmissions(); 
-    }
-
-function hideSubmissions(){ $('#submissionsModal').style.display='none'; }
-
-function submitForm(event){
-  event.preventDefault();
-  const submitBtn = $('#submitBtn');
-  submitBtn.classList.add('loading');
-  submitBtn.disabled = true;
-  const form = $('#myForm');
-  const data = {
-    name: form.name.value.trim(),
-    batch: form.batch.value,
-    message: form.message.value.trim()
-  };
-
-  fetch(WEB_APP_URL,{
-    method:'POST',
-    body:JSON.stringify(data)
-  })
-  .then(res=>res.text())
-  .then(txt=>{
-    submitBtn.classList.remove('loading');
-    submitBtn.disabled = false;
-    if(txt.startsWith("Success")){
-      form.reset(); hideForm(); showSuccessMessage();
-    }else {
-      showNotification("ডেটা জমা হয়নি! আবার চেষ্টা করুন।", true);
-    }
-  })
-  .catch(()=>{
-    submitBtn.classList.remove('loading');
-    submitBtn.disabled = false;
-    showNotification("ডেটা জমা হয়নি! আবার চেষ্টা করুন।", true);
-  });
-}
-
-function showSuccessMessage(){
-  const successMessage = $('#successMessage');
-  successMessage.style.display='block';
-  setTimeout(()=>successMessage.style.display='none',3000);
-}
-
-function loadSubmissions() {
-  fetch(WEB_APP_URL + '?action=getSubmissions')
-    .then(res => res.json())
-    .then(data => {
-      const list = $('#submissions-list');
-      list.innerHTML = '';
-      
-      // শুধুমাত্র ALIM-27 ব্যাচ ফিল্টার করুন
-      const alim27Submissions = data.filter(item => 
-        item.batch && item.batch.toString().toLowerCase().includes('alim-27')
-      );
-      
-      // নতুন থেকে পুরানো সাজানো
-      alim27Submissions.sort((a, b) => new Date(b.timestamp || b.time) - new Date(a.timestamp || a.time));
-      
-      if (alim27Submissions.length === 0) {
-        list.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted)" class="bangla-font">ALIM-27 ব্যাচের কোন সাবমিশন নেই</div>';
-        return;
-      }
-      
-      alim27Submissions.forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'submission-item';
-        div.innerHTML = `
-          <div class="submission-name bangla-font">${item.name}</div>
-          <div class="submission-batch bangla-font">ব্যাচ: ${item.batch}</div>
-          <div class="submission-message bangla-font">${item.message}</div>
-          ${item.reply ? `<div class="submission-reply bangla-font">উত্তর: ${item.reply}</div>` : ''}
-          <div class="submission-time bangla-font">${item.time}</div>
-        `;
-        list.appendChild(div);
-      });
-    })
-    .catch(() => showNotification("সাবমিশন লোড হয়নি! আবার চেষ্টা করুন।", true));
-    }
-$('#form-button').addEventListener('click', handleFormClick);
-$('#submissions-button').addEventListener('click',showSubmissions);
-window.addEventListener('click',(e)=>{ 
-  if(e.target==$('#nameModal')) hideNameModal(); 
-  if(e.target==$('#formModal')) hideForm(); 
-  if(e.target==$('#submissionsModal')) hideSubmissions(); 
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Notice bar code
-  const noticeBar = document.querySelector('.notice-bar');
-  const noticeSpan = document.querySelector('.notice-bar span');
-  
-  if (noticeBar && noticeSpan) {
-    noticeBar.style.visibility = 'visible';
-    noticeBar.style.opacity = '1';
-    
-    setTimeout(() => {
-      noticeSpan.style.animation = 'none';
-      void noticeSpan.offsetWidth;
-      noticeSpan.style.animation = 'marquee 40s linear infinite 0s';
-    }, 10);
-  }
-
-  // Button visibility - with page reload check
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get('refreshed')) {
-    // Already refreshed, proceed normally
-    setButtonVisibility();
-  } else {
-    // First load, add parameter and reload
-    urlParams.set('refreshed', 'true');
-    window.location.search = urlParams.toString();
-  }
-
   // Initialize Clock
   updateClock();
   setInterval(updateClock, 1000);
 });
 
-function updateClock() {
-  const now = new Date();
-  const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
-  const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+    function updateClock() {
+      const now = new Date();
+      const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+      const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 
-  // Time and date in Bengali
-  let timeStr = now.toLocaleTimeString('bn-BD', timeOptions); // Bengali digits for time
-  timeStr = timeStr.replace(/(AM|PM)/, '<small>$1</small>'); // Make AM/PM smaller
-  const dateStr = now.toLocaleDateString('bn-BD', dateOptions); // Bengali date
+      // Time and date in Bengali
+      let timeStr = now.toLocaleTimeString('bn-BD', timeOptions); // Bengali digits for time
+      timeStr = timeStr.replace(/(AM|PM)/, '<small>$1</small>'); // Make AM/PM smaller
+      const dateStr = now.toLocaleDateString('bn-BD', dateOptions); // Bengali date
 
-  const clockTime = document.getElementById('clock-time');
-  const clockDate = document.getElementById('clock-date');
-  const examCountdown = document.getElementById('exam-countdown');
+      const clockTime = document.getElementById('clock-time');
+      const clockDate = document.getElementById('clock-date');
+      const examCountdown = document.getElementById('exam-countdown');
 
-  if (clockTime && clockDate && examCountdown) {
-    clockTime.innerHTML = timeStr; // Use innerHTML for <small> tag
-    clockDate.textContent = dateStr;
+      if (clockTime && clockDate && examCountdown) {
+        clockTime.innerHTML = timeStr; // Use innerHTML for <small> tag
+        clockDate.textContent = dateStr;
 
-    // Exam Countdown
-    const examDate = new Date(2027, 1, 8); // 08-02-2027 (Month is 0-indexed, so 1 = February)
-    let diff = examDate - now;
+        // Exam Countdown
+        const examDate = new Date(2027, 1, 8); // 08-02-2027 (Month is 0-indexed, so 1 = February)
+        let diff = examDate - now;
 
-    if (diff < 0) {
-      examCountdown.textContent = 'পরীক্ষা শুরু হয়েছে!';
-    } else {
-      const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30));
-      const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-      examCountdown.textContent = `বোর্ড পরীক্ষা শুরু: ${months} মাস ${days} দিন পর*`;
+        if (diff < 0) {
+          examCountdown.textContent = 'পরীক্ষা শুরু হয়েছে!';
+        } else {
+          const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30));
+          const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+          examCountdown.textContent = `বোর্ড পরীক্ষা শুরু: ${months} মাস ${days} দিন পর*`;
+        }
+      }
     }
-  }
-}
 
-function setButtonVisibility() {
-  const role = getUserRole();
-  const formButton = $('#form-button');
-  const submissionsButton = $('#submissions-button');
-  
-  // Reset both first
-  formButton.style.display = 'none';
-  submissionsButton.style.display = 'none';
-  
-  if (role === 'user' || role === 'editor') {
-    formButton.style.display = 'inline-flex';
-  } 
-  if (role === 'owner' || role === 'editor') {
-    submissionsButton.style.display = 'inline-flex';
-  }
-}
+    function setButtonVisibility() {
+      const role = getUserRole();
+      const formButton = $('#form-button');
+      const submissionsButton = $('#submissions-button');
+      
+      // Reset both first
+      formButton.style.display = 'none';
+      submissionsButton.style.display = 'none';
+      
+      if (role === 'user' || role === 'editor') {
+        formButton.style.display = 'inline-flex';
+      } 
+      if (role === 'owner' || role === 'editor') {
+        submissionsButton.style.display = 'inline-flex';
+      }
+    }
 
-// Dynamic placeholder functionality
-function initDynamicPlaceholder() {
-  const searchInput = $('#search-subjects');
-  const placeholders = [
-    'সার্চ করুন🔎',
-    'কি খুজছেন?🤔',
-    'সাজেশন্স🔥',
-    'জিন্স সাজেশন্স💥',
-    '👉ক্লাস',
-    '💡মিশন',
-    '👉ইক্সাম',
-    'শীট🗞',
-  ];
-  
-  let currentIndex = 0;
-  
-  // Function to update placeholder
-  function updatePlaceholder() {
-    searchInput.placeholder = placeholders[currentIndex];
-    currentIndex = (currentIndex + 1) % placeholders.length;
-  }
-  
-  // Update every 3 seconds
-  setInterval(updatePlaceholder, 4000);
-  
-  // Initialize with first placeholder
-  updatePlaceholder();
-}
+    // Add event listener to the main website button in default page
+    document.getElementById('main-website-btn').addEventListener('click', goToMainWebsite);
   </script>
 </body>
 </html>
