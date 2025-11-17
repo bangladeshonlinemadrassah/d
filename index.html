@@ -4071,7 +4071,7 @@
     // Default page to main website transition
 function goToMainWebsite() {
   defaultPage.style.display = 'none';
-  
+    
   if (checkLoginExpiry()) {
     mainPage.style.display = 'block';
     loadInitialData();
@@ -4080,7 +4080,7 @@ function goToMainWebsite() {
   } else {
     loginPage.style.display = 'flex';
   }
-}
+    }
 
 // Check if user has visited main website before
 document.addEventListener('DOMContentLoaded', () => {
